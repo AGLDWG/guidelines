@@ -1,0 +1,8 @@
+# Mac
+.DS_Store
+
+# JetBrains
+.idea/
+
+# Python
+*.pcy
