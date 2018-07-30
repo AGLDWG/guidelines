@@ -54,7 +54,7 @@ Addressing two of the four principles, *'use URIs'* and *'use HTTP URIs', *gover
 In order to enable HTTP URIs to be "dereferenceable", data publishers have to set up the necessary infrastructure (e.g. DNS & HTTP servers) to serve representations or descriptions of resources (e.g. a human-readable HTML representation or a machine-readable RDF/XML representation). For a resource to be considered Linked data, a publisher ***MUST*** publish it using RDF and ***MUST*** publish at least one machine-readable representation of it (e.g. RDF/XML, JSON-LD, Turtle) via the HTTP URI identifying the resource.
 
 Requirement | Description | Conformance
---|--|--
+---|---|---
 <a id="req-1"></a>[Req 1] | Use HTTP URIs for Linked Data resources | ***MUST***
 <a id="req-2"></a>[Req 2] | Provide at least one machine-readable representation in RDF at a resource's URI. | ***MUST***
 
@@ -67,7 +67,7 @@ Beyond confirming adherence to these principles, the AGLDWG provides instruction
 The AGLDWG has dedicated the URI domain `linked.data.gov.au` to persistent identifiers (PIDs) for Linked Data resources. This is to be able to supply infinitely many PID URIs using a domain that is not coupled to a particular agency's name or function as such domains, for example `dfat.gov.au` which is coupled to the Department of Foreign Affairs and Trade (DFAT), change over time and are thus not persistent. The use of `linked.data.gov.au` is protected by a Memorandum of Understanding signed by the managing agency, the Digital Transformation Agency and 5 agencies interested in Linked Data [[AGLDWG-2018](#ref-AGLDWG-2018)] which came into effect in May, 2018. The MoU requires any proposed changes to the management or use of the domain to be mooted amongst the MoUs signatories.
 
 Requirement | Description | Conformance
---|--|--
+---|---|---
 <a id="req-3"></a>[Req 3] | Use the domain `linked.data.gov.au` for organisation-independent, Linked Data HTTP URIs | ***MUST***
 
 While the AGLDWG can assist with HTTP URIs generally, they will only assist with the management of those within this domain.
@@ -111,7 +111,7 @@ AGLDWG groups and related parties and the ISO11179 roles assigned to them descri
 **Table 1**: AGLDWG groups and related parties and the ISO11179 roles assigned to them  
 
 Group | Role
---|--
+---|---
 AGLDWG | *Overall Registration Authority*, *Overall Stewardship Organization*
 Recommendations Subgroup | *Registrar*, *Executive Committee*
 Solutions Subgroup | *Control Committee* and also *Steward*
@@ -138,7 +138,7 @@ A more detailed workflow showing PID URI implementation is given in Figure 3.
 Notes on specific workflows per resource type are given below in Sections 6 - 9.
 
 Requirement | Description | Conformance
---|--|--
+---|---|---
 <a id="req-4"></a>[Req 4] | Submitters requesting PID URIs must follow the AGLDWG's PID URI allocation workflows and submit their requests to the PID Allocations Catalogue | ***MUST***
 
 ### 4.3 Approval status
@@ -187,7 +187,7 @@ Dataset can have URIs that identify the dataset as a whole. These URIs are somew
 Dataset producers are free to choose the form that their sub-dataset item URIs take (so-called *hash* or *slash* URIs (see [[W3C-2016](#ref-W3C-2016)]) however they must deliver both the top-level register of their dataset and all visible  subcomponents of it according to Linked Data principles.
 
 Requirement | Description | Conformance
---|--|--
+---|---|---
 <a id="req-5"></a>[Req 5] | Resources identified using PID URIs must contain only Linked Data and must pass the conformance tests specified for that resource type | ***MUST***
 
 The tests for what constitutes Linked Data and thus a Linked Data dataset are articulated in [Appendix A](#app-a).
@@ -249,7 +249,7 @@ This process follows the general process as outlined in Figure 1.
 In the event of more than one request for the same `dataset-id`, application precedent wins, so the first application for a particular `dataset-id`, if successful, will be awarded it. Precedents is determined by date of application lodgement, not date of application completion. This is also true for other resource types for their respective IDs.
 
 Requirement | Description | Conformance
---|--|--
+---|---|---
 <a id="req-6"></a>[Req 6] | For a particular PID URI to be allocated, the request for that allocation must be the first request for it that is subsequently found eligible | ***MUST***
 
 
@@ -524,14 +524,14 @@ Requirement | Function name | Purpose
 The following tests in the Python script file `ldreqs.py` within this repository must pass to ensure definitional resources pass the above criteria:
 
 Requirement | Function name | Purpose
---|--|--
+---|---|---
 1. | `dataset_required_1` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, resolves the properly `rdfs:label` for the URI
 3. | `dataset_required_3` | resolves the access URI of the resource, looks for subelements of that resource indicated via `dct:hasPart`, `reg:register` (subitems indicating the dataset as is a `reg:Register`)   
 
 The following tests in the Python script file `ldreqs.py` within this repository will also be run to provide feedback to the *Submitter*:
 
 Requirement | Function name | Purpose
---|--|--
+---|---|---
 2. | `dataset_optional_2` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking HTML, confirms the result is valid HTML
 4. | `dataset_optional_4` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, seeks sublements defined using hash or slash URIs stemming form the dataset URI by pattern matching subject triples with the dataset URI
 
@@ -541,7 +541,7 @@ Resources submitted to the AGLDWG for URI allocation are considered items submit
 **Table 2**: PID Allocations Catalogue for elements for catalogue items, their Registry Ontology equivalents, cardinalities and notes. The Registry Ontology element prefixes are:
 
 Catalogue Element | Registry Ontology Element |  Cardinality | Notes
---|--|--|--
+---|---|---|---
 Title | `rdfs:label` | 1 | -
 Description | `dct:description` | 1 | -
 - | `dct:dateSubmitted` | 1 | automatically filled on catalogue item creation
