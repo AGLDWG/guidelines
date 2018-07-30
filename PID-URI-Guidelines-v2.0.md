@@ -36,14 +36,14 @@ URI patterns are expressed using Augmented Backus-Naur Form, as defined in [[IET
 Status codes used for resources in the PID Allocations Catalogue of *accepted*, *deprecated*, *retired*, *valid*, *experimental*, *stable*, *not accepted*, *invalid*, *reserved*, *superseded*, *submitted*,  are taken from the Registry Ontology [[REY-2012](#ref-REY-2012)] and are re-presented by the AGLDWG as a Linked Data vocabulary at [[AGLDWG-2018b](#ref-AGLDWG-2018b)].
 
 ## 2. <a id="Introduction"></a>Introduction    
-Government departments and agencies assign identifiers to many things they are responsible for - e.g. datasets, classification concepts, hospitals, equipment, etc. These identifiers are then used when referring to or making statements about particular things. For example, when referring to a road closure, the identifier (e.g. "M5") will be used to inform the public or when referring to a particular census Mesh Block, its identifier, perhaps "80006300000" will be used.
+Government published, public sector information (PSI), usually about the things agencies are responsible for, is intended to be re-used by many, perhaps initially unknown, applications over time. This is to maximise its value to the nation and this aim is communicated in many places, such as the Productivity Commission's "Data Availability and Use" report of 2017 [[PC-2017](#ref-PC-2017)]. For this reason, it is important that elements PSI are able to be identified and accessed in consistent ways for long periods, perhaps multiple decades.
 
-Government published, public sector information (PSI), usually about the things agencies are responsible for, is intended to be re-used by many, initially perhaps unknown, applications over time to maximise its value to the nation. For this reason, it is important that elements of it are able to be identified and accessed in consistent ways for long periods (perhaps multiple decades).
+Government departments and agencies often assign identifiers to many digital PSI things and non-public information resources they are responsible for - e.g. datasets, classification concepts, hospitals, equipment, client interactions. These identifiers are then used when referring to or making statements about particular things. For example, when referring to a road closure, the identifier (e.g. "M5") will be used to inform the public or when referring to a particular census Mesh Block, its Australian bureau of Statistics-issued identifier, perhaps "80006300000" will be used. These identifiers might be well known but are most often not actionable, i.e. they cannot be easily used to discover information about the thing they identify, even if it exists, in standard ways.
 
-The Australian Government Linked Data Working Group (AGLDWG) advocates the use of Linked Data [[W3C-2018](#ref-W3C-2018)] as a particular set of technologies to be used for Internet-distributed, machine-readable data and, due to this, advocates the use of Linked Data URIs for identifiers for things.
+The Australian Government Linked Data Working Group (AGLDWG) advocates the use of Linked Data [[W3C-2018](#ref-W3C-2018)] as a particular set of technologies to be used for Internet-distributed, machine-readable data and, due to this, advocates the use of Uniform Resource Identifiers (URIs) as identifiers for things. The use of URIs as item identifiers greatly improves their accessibility and can also improve their endurance.
 
 ### 2.1 Uniform Resource Locators (URIs)
-Linked Data uses Uniform Resource Identifiers (URI) which are part of a single, global, identification system used on the World Wide Web, similar to telephone numbers in a public switched telephone network. We are all familiar with URIs at work due to their use for addresses in browsers for web pages. URIs are a key technology supporting Linked Data offering a generic, universal and infinitely expandable mechanism to identify *things*. In order to publish data in a Linked Data fashion, government needs to represent the identifiers they use for things using URIs.
+Linked Data uses URIs which are part of a single, global, identification system used on the World Wide Web, similar to telephone numbers in a public switched telephone network. We are all familiar with URIs at work due to their use for addresses in browsers for web pages. URIs are a key technology supporting Linked Data offering a generic, universal and infinitely expandable mechanism to identify *things*. In order to publish data in a Linked Data fashion, government needs to represent the identifiers they use for things using URIs.
 
 Sir Tim Berners-Lee, who created many aspects of the World Wide Web we now take for granted, defined principles for the use of URIs with Linked Data [[TBL-2009](#ref-TBL-2006)]. This document builds on those principles which, summarised, are:
 
@@ -58,10 +58,23 @@ Requirement | Description | Conformance
 <a id="req-1"></a>[Req 1] | Use HTTP URIs for Linked Data resources | ***MUST***
 <a id="req-2"></a>[Req 2] | Provide at least one machine-readable representation in RDF at a resource's URI. | ***MUST***
 
-Beyond confirming adherence to these principles the AGLDWG provides instruction on how to structure URIs for certain kinds of resources according to URI construction best practice [[W3C-2012b](#ref-W3C-2012b)] and how to register them with the AGLDWG in order to use the managed PID URI domain `linked.data.gov.au`.
+#### 2.1.3 URI persistence
+Much though has gone into ensuring that URIs for things can be made to keep working for a long time, starting with their technical design to avoid specific technology dependence (addressed by [[TBL-2009](#ref-TBL-2006)] and for Linked Data use in [[W3C-2008](#ref-W3C-2008)]) and extending to the governance arrangements for them to avoid, or at least make more resilient, their social systems dependence. Principles for successful persistent identifier generation are articulated in papers such as "The challenge of ensuring persistency of identifier systems" [[CAR-2017](#ref-CAR2-17)] which, among other things, advocates for the use of organisationally-independent identifiers.
+
+Beyond confirming adherence to these principles, the AGLDWG provides instruction on how to create URIs for certain kinds of resources according to URI construction best practice [[W3C-2012](#ref-W3C-2012)] and also provides an individual government organisation-independent namespace for them to use: `linked.data.gov.au`. This namespace, an internet domain, is managed by the AGLDWG.
 
 ## 3. <a id="PersistentDomain"></a>Persistent Domain
 The AGLDWG has dedicated the URI domain `linked.data.gov.au` to persistent identifiers (PIDs) for Linked Data resources. This is to be able to supply infinitely many PID URIs using a domain that is not coupled to a particular agency's name or function as such domains, for example `dfat.gov.au` which is coupled to the Department of Foreign Affairs and Trade (DFAT), change over time and are thus not persistent. The use of `linked.data.gov.au` is protected by a Memorandum of Understanding signed by the managing agency, the Digital Transformation Agency and 5 agencies interested in Linked Data [[AGLDWG-2018](#ref-AGLDWG-2018)] which came into effect in May, 2018. The MoU requires any proposed changes to the management or use of the domain to be mooted amongst the MoUs signatories.
+
+Requirement | Description | Conformance
+--|--|--
+<a id="req-3"></a>[Req 3] | Use the domain `linked.data.gov.au` for organisation-independent, Linked Data HTTP URIs | ***MUST***
+
+While the AGLDWG can assist with HTTP URIs generally, they will only assist with the management of those within this domain.
+
+The AGLDWG maintains a public catalogue of requests for PID URIs within `linked.data.gov.au` and of the statuses of those requests (e.g. *submitted*, *accepted*, *invalid* etc.). The "PID Allocations Catalogue" is online at:
+
+* [catalogue.linked.data.gov.au](http://catalogue.linked.data.gov.au)
 
 ### 3.1 Previously used domains
 The AGLDWG maintains two legacy persistent domains:
@@ -109,20 +122,24 @@ Everyone not listed above | *Read-only user*
 ### 4.2 Registration workflow
 The processing of items for which PID URIs are requested follows workflows. The general workflow for item processing is given in Figure 1.
 
-![](workflow-approval.png)
+![](workflow-approval.png)  
 **Figure 1**: Workflow diagram showing the general workflow for the approval processing of PID URI allocation requests. Approval statuses are marked.
 
 A more detailed workflow for resource review is given in Figure 2.
 
-![](workflow-review.png)
+![](workflow-review.png)  
 **Figure 2**: Workflow diagram showing detailed steps within the resource review workflow. Approval statuses are marked.
 
 A more detailed workflow showing PID URI implementation is given in Figure 3.
 
-![](workflow-implementation.png)
+![](workflow-implementation.png)  
 **Figure 3**: Workflow diagram showing detailed steps within the PID URI implementation workflow. Approval statuses are marked.
 
 Notes on specific workflows per resource type are given below in Sections 6 - 9.
+
+Requirement | Description | Conformance
+--|--|--
+<a id="req-4"></a>[Req 4] | Submitters requesting PID URIs must follow the AGLDWG's PID URI allocation workflows and submit their requests to the PID Allocations Catalogue | ***MUST***
 
 ### 4.3 Approval status
 An item's acceptance for PID allocation is indicated with a *status*, terms for which are taken from the Registry Ontology's status vocabulary. The original publication of this vocabulary is [[REY-2012](#ref-REY-2012)] and the AGLDWG has republished it at [[AGLDWG-2018b](#ref-AGLDWG-2018)]) to enable better visibility. The status vocabulary term hierarchy is:
@@ -171,7 +188,7 @@ Dataset producers are free to choose the form that their sub-dataset item URIs t
 
 Requirement | Description | Conformance
 --|--|--
-<a id="req-3"></a>[Req 3] | Datasets implementing PID URIs must contain only Linked Data | ***MUST***
+<a id="req-5"></a>[Req 5] | Resources identified using PID URIs must contain only Linked Data and must pass the conformance tests specified for that resource type | ***MUST***
 
 The tests for what constitutes Linked Data and thus a Linked Data dataset are articulated in [Appendix A](#app-a).
 
@@ -210,18 +227,30 @@ Where the "gnaf" dataset, using slash URIs for Address subelement "GA1234" could
 `http://linked.data.gov.au/dataset/gnaf/address/GA1234`
 
 ### 6.2 Registration Process
+This process follows the general process as outlined in Figure 1.
 
-* *Submitter* requests an allocation for a dataset URI by creating a complete catalogue record for a dataset in the AGLDWG LD Resource Catalogue with status `submitted`.
-* *Controlling Committee* inspects request and approves unless there is an obvious issue. Catalogue record status set to `approved`.
-* *Steward* performs a test to verify the dataset consists only of Linked Data
-* *Steward* implements URI redirect to the hosted dataset, catalogue record status set to `stable`.
+* *Submitter* must be eligible, as per Req 6
+  * *Submitter* initiates a requests a PID URI allocation for a dataset URI by creating a complete catalogue record in the AGLDWG LD Resource Catalogue
+  * the resource type must be set to 'dataset'
+  * request approval status to `submitted`
+* *Controlling Committee* is automatically notified to review the requests by the catalogue
+* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a dataset described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
+  * if approved, request approval status to `approved`
+  * if not approved, resource status set to `not approved`
+  * *Submitter* automatically notified of status change
+* if approved, *Steward* implements a URI redirect to the hosted dataset and tests implementation
+  * if no collisions with existing patterns are found:
+    * if the resource is ready, approval status to `stable`
+    * if the resource is not ready, else approval status set to `reserved`
+  * if collisions are found, approval status set to `invalid`
+  * *Submitter* notified
 * *Submitting Organization* is free to use allocated URIs
 
-In the event of more than one request for the same `dataset-id`, application precedent wins, so the first application for a particular `dataset-id`, if successful, will be awarded it. Precedents is determined by date of application lodgement, not date of application completion.
+In the event of more than one request for the same `dataset-id`, application precedent wins, so the first application for a particular `dataset-id`, if successful, will be awarded it. Precedents is determined by date of application lodgement, not date of application completion. This is also true for other resource types for their respective IDs.
 
 Requirement | Description | Conformance
 --|--|--
-<a id="req-4"></a>[Req 4] | For a particular dataset-id to be allocated, the applicant must be the first applicant for it whose application is subsequently found eligible for that dataset-id | ***MUST***
+<a id="req-6"></a>[Req 6] | For a particular PID URI to be allocated, the request for that allocation must be the first request for it that is subsequently found eligible | ***MUST***
 
 
 ### 6.3 Required Metadata
@@ -276,13 +305,23 @@ or, if the `StreetType` codes were modularised within the ontology perhaps:
 `http://linked.data.gov.au/def/gnaf/code/StreetTypes/Avenue`
 
 ### 7.2 Registration Process
-The AGLDWG plays role of *Steward* and may also play the role of *Controlling Committee*.
+This process follows the general process as outlined in Figure 1.
 
-* *Submitter* requests an allocation for a dataset URI by creating a complete catalogue record for a definitional resource in the AGLDWG LD Resource Catalogue with status `submitted`.
-  * if the RDF source of the resource a single file, the *Submitting Organization* should upload the source to the AGLDWG LD Resource Catalogue for hosting
-* *Controlling Committee* inspects request and approves unless there is an obvious issue. Catalogue record status set to `approved`.
-* *Steward* performs a test to verify the dataset consists only of Linked Data
-* *Steward* implements URI redirect to the hosted dataset, catalogue record status set to `stable`.
+* *Submitter* must be eligible, as per Req 6
+  * *Submitter* initiates a requests a PID URI allocation for a dataset URI by creating a complete catalogue record in the AGLDWG LD Resource Catalogue
+  * the resource type must be set to 'definitional'
+  * request approval status to `submitted`
+* *Controlling Committee* is automatically notified to review the requests by the catalogue
+* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a dataset described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
+  * if approved, request approval status to `approved`
+  * if not approved, resource status set to `not approved`
+  * *Submitter* automatically notified of status change
+* if approved, *Steward* implements a URI redirect to the hosted dataset and tests implementation
+  * if no collisions with existing patterns are found:
+    * if the resource is ready, approval status to `stable`
+    * if the resource is not ready, else approval status set to `reserved`
+  * if collisions are found, approval status set to `invalid`
+  * *Submitter* notified
 * *Submitting Organization* is free to use allocated URIs
 
 ### 7.3 Required Metadata
@@ -292,7 +331,7 @@ Entries in the AGLDWG LD Resource Catalogue are public from submission onwards.
 
 
 ## 8. <a id="TopLevelRegisterURIs"></a>Top-Level Register URIs
-Top-level Registers are an index of individual Linked Data objects, promoted to the 'top' of `linked.data.gov.au` for high visibility. Such registers formulated using very basic information - the identity of the register itself (given via its URI), metadata according to the Registry Ontology [[17](#ref-17)] listing the class(es) of items within it and potentially Registry Ontology links to sub pages of the register. lists of particular classes of LD objects that both allow shorter URI allocation than URIs from datasets and also allow items within them to not use URIs deriving from them. As with datasets and definitional resources registered with the AGLDWG for URI allocation, top-level registers require metadata to be lodged so that the content and ownership of the register is known and can be managed.
+Top-Level Registers are an index of individual Linked Data objects, promoted to the 'top' of `linked.data.gov.au` for high visibility. Such registers formulated using very basic information - the identity of the register itself (given via its URI), metadata according to the Registry Ontology [[17](#ref-17)] listing the class(es) of items within it and potentially Registry Ontology links to sub pages of the register. lists of particular classes of LD objects that both allow shorter URI allocation than URIs from datasets and also allow items within them to not use URIs deriving from them. As with datasets and definitional resources registered with the AGLDWG for URI allocation, top-level registers require metadata to be lodged so that the content and ownership of the register is known and can be managed.
 
 Since top-level registers are designed to promote and aggregate assessed in order to determine the appropriateness of the requested URI to the class(es) of objects to be listed in the register.
 
@@ -318,29 +357,60 @@ A *Submitting Organization* wishes a top-level register for items of class A and
 A *Submitting Organization* may request a top-level register such as `linked.data.gov.au/classA/` and then present items within that class with URIs such as `linked.data.gov.au/classA/1`, `linked.data.gov.au/classA/2` etc. but may also present items with un-related URIs within the register as long as the class of item (discoverable via de-referenceable RDF) accords with the class(es) for which the register was allocated. The AGLDWG may check the classes of items within a top-level register using automated means.
 
 #### 8.0.2 Subregisters
-If a *Submitting Organization* wishes to use a top-level register already allocated for new items according with the class(es) for with the register was allocated, they have two options:
+If a *Submitting Organization* wishes to use a top-level register already allocated for new items in accordance with the class(es) for with the register was allocated, they have two options:
 
 1. arrange with the original *Submitting Organization* to have their items included in the register
-2. request a module within the top-level register for their items
+2. request a module within the Top-Level Register for their items
 
-Modules requested within a top-level register will be presented as sub-registers of the top-level register. Items within
+Modules requested within a top-level register will be presented as sub-registers of the Top-Level Register. Management of such is the responsibility of the Top-Level Register's manager - the original *Submitting Organisation* who was allocated the URI for it, not the AGLDWG.
 
 ### 8.1 Dataset URI pattern
-The pattern for allocating Dataset URIs is:
+The pattern for allocating Top-Level Register URIs is:
 
 ```
-dataset-uri ::=  protocol "://linked.data.gov.au/dataset/" dataset-id
+register-uri ::=  protocol "://linked.data.gov.au/" register-id "/"
 protocol ::= "http" | "https"
-dataset-id ::= *(ALPHA | DIGIT | "-")
+register-id ::= *(ALPHA | DIGIT | "-")
 ```
 
-Where `dataset-id` is a shortened form of the dataset title.
+Where `register-id` is some approximation of the class(es) of object which the register contains. What is a fair approximation and what is not will be judged by the *Controlling Committee*.
 
-An example is that a Linked Data dataset titled "Geocoded National Address File" (G-NAF) could use the `dataset-id` of "gnaf" and thus make the `dataset-uri` of:
+An example is that a *Submitter* may request present a register of organisations, containing `Organization`-class individuals as defined in the Organization Ontology [[W3C-2014c]()#ref-W3C-2014c)] and request the allocation of:
 
-`http://linked.data.gov.au/dataset/gnaf`
+`http://linked.data.gov.au/organisation/`
+
+Alternatively, the *Submitter* may request the allocation of:
+
+`http://linked.data.gov.au/org/`
+
+where 'org' is a well-known shortened form of 'organisation'. Either of these requests are suitable for allocation.
+
+Subregisters within a Top-Level Register are to be managed by the manager of the Top-Level register with the `module-id` to be allocated by them. The total URI pattern for this form of modularised register is:
+
+```
+modularised-register-uri ::= register-uri "/" module-id
+module-id ::= *(ALPHA | DIGIT | "-")
+```
 
 ### 8.2 Registration Process
+This process follows the general process as outlined in Figure 1.
+
+* *Submitter* must be eligible, as per Req 6
+  * *Submitter* initiates a requests a PID URI allocation for a dataset URI by creating a complete catalogue record in the AGLDWG LD Resource Catalogue
+  * the resource type must be set to 'definitional'
+  * request approval status to `submitted`
+* *Controlling Committee* is automatically notified to review the requests by the catalogue
+* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a dataset described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
+  * if approved, request approval status to `approved`
+  * if not approved, resource status set to `not approved`
+  * *Submitter* automatically notified of status change
+* if approved, *Steward* implements a URI redirect to the hosted dataset and tests implementation
+  * if no collisions with existing patterns are found:
+    * if the resource is ready, approval status to `stable`
+    * if the resource is not ready, else approval status set to `reserved`
+  * if collisions are found, approval status set to `invalid`
+  * *Submitter* notified
+* *Submitting Organization* is free to use allocated URIs
 
 ### 8.3 Required Metadata
 Metadata to be supplied for the registration of a Linked Data register, and thus the allocation of a URI for it, must constitute a valid record for such within the AGLDWG LD Resource Catalogue. Record validity is determined using the process outlined in [Appendix B](#app-b).
@@ -349,46 +419,61 @@ Entries in the AGLDWG LD Resource Catalogue are public from submission onwards.
 
 
 ## 9. <a id="SecondLevelRegisterURIs"></a>Second-Level Register URIs
+At this stage, the AGLDWG recognises there are two sorts of Second-level Registers for which URIs may be allocated:
 
+1. subregisters of a Dataset
+2. modularised subregisters of a Top-Level Register
+
+In both cases, the URI arrangements for the Second-Level Register URIs need to be made by the dataset or Top-Level Register manager, however the AGLDWG can assist with implementing redirects for these subregisters within the patterning assigned to a Dataset or Top-Level Register, if requested. Such pattern implementation will follow the workflow given in Figure 3 but will not result in any change to the relevant allocation status of the Dataset or Top-Level Register.
 
 ## 10. <a id="References"></a>References
-[W3C-2018] <a name="ref-W3C-2018"></a> World Wide Web Consortium, "Linked Data", web page, 2018. <https://www.w3.org/standards/semanticweb/data>, accessed 2018-07-27.
-
-[TBL-2006] <a name="ref-TBL-2006"></a>Berners-Lee, Tim "Linked Data", web page, 2006. <http://www.w3.org/DesignIssues/LinkedData.html>, accessed 2018-06-07.  
-
 [AGLDWG-2018] <a name="ref-AGLDWG-2018"></a>Australian Government Linked Data Working Group "Governance", web page, 2018. <http://www.linked.data.gov.au/governance>, accessed 2018-07-27.
+
+[AGLDWG-2018b] <a name="ref-AGLDWG-2018b"></a>Australian Government Linked Data Working Group, "Status Vocabulary". SKOS Vocabulary, 22 July 2018. <http://test.linked.data.gov.au/def/status>, accessed 2018-07-22.
 
 [CAB-2010] <a name="ref-CAB-2010"></a>Cabinet Office, "Designing URI Sets for the UK Public Sector", web page, 2010. <https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector>, accessed 2018-06-07.  
 
-[W3C-2012b] <a name="ref-W3C-2012b"></a>World Wide Web Consortium "223 Best Practices URI Construction", wiki web page, 2012. <http://www.w3.org/2011/gld/wiki/223_Best_Practices_URI_Construction>, accessed 2018-06-07.  
+[CAR-2017] <a href="ref-CAR-2017"></a>Car, Nick; Golodoniuc, Pavel; Klump, Jens. "The challenge of ensuring persistency of identifier systems in the world of ever-changing technology". Data Science Journal. 2017; 16: Article 13. <https://doi.org/10.5334/dsj-2017-013>
 
-[6] <a name="ref-6"></a>Dublin Core Metadata Initiative "DCMI Metadata Terms", web page, 2012. <http://www.dublincore.org/documents/dcmi-terms/>, accessed 2018-06-07.  
+##### Not used
+[DCMI-2012] <a name="ref-DCMI-2012"></a>Dublin Core Metadata Initiative "DCMI Metadata Terms", web page, 2012. <http://www.dublincore.org/documents/dcmi-terms/>, accessed 2018-06-07.
 
-[7] <a name="ref-7"></a>Internet Engineering Task Force "RFC6570: URI Template", proposed standard, 2012. <http://tools.ietf.org/html/rfc6570>, accessed 2018-06-07.  
+##### Not used
+[IETF-2012] <a name="ref-IETF-2012"></a>Internet Engineering Task Force "RFC6570: URI Template", proposed standard, 2012. <http://tools.ietf.org/html/rfc6570>, accessed 2018-06-07.  
 
-[8] <a name="ref-8"></a>Fielding, Roy T. "[httpRange-14] Resolved", archived email, 2005. <http://lists.w3.org/Archives/Public/www-tag/2005Jun/0039.html>, accessed 2018-06-07.  
-
-[9] <a name="ref-9"></a>World Wide Web Consortium "Cool URIs for the Semantic Web", W3C Interest Group Note, 03 December 2008. <http://www.w3.org/TR/cooluris/>, accessed 2018-06-07.  
-
-[10] <a name="ref-10"></a>Internet Engineering Task Force "RFC2616: Hypertext Transfer Protocol -- HTTP/1.1", Request for Comment, 1999. <http://www.ietf.org/rfc/rfc2616>, accessed 2018-06-07.  
+##### Not used
+[IETF-1999] <a name="ref-IETF-1999"></a>Internet Engineering Task Force "RFC2616: Hypertext Transfer Protocol -- HTTP/1.1", Request for Comment, 1999. <http://www.ietf.org/rfc/rfc2616>, accessed 2018-06-07.  
 
 [IETF-1997] <a name="ref-IETF-1997"></a>Internet Engineering Task Force, Network Working Group "Key words for use in RFCs to Indicate Requirement Levels", Request for Comments: 2119, 1997. <http://www.ietf.org/rfc/rfc2119>, accessed 2018-06-07.
-
-[W3C-2014] <a name="ref-W3C-2014"></a>World Wide Web Consortium "RDF 1.1 Concepts and Abstract Syntax", W3C Proposed Recommendation, 09 January 2014. <http://www.w3.org/TR/rdf11-concepts/>, accessed 2018-06-07.  
-
-[W3C-2016] <a href="ref-W3C-2016">World Wide Web Consortium, "HashVsSlash", web page, 2016. <https://www.w3.org/wiki/HashVsSlash>, accessed 2018-07-27.
 
 [IETF-2008] <a name="ref-IETF-2008"></a>Internet Engineering Task Force, Network Working Group "Internet Standard 68: Augmented BNF for Syntax Specifications: ABNF". Internet Engineering Task Force, 2008. <https://tools.ietf.org/html/std68>, accessed 2018-06-07.  
 
 [ISO-2015] <a name="ref-ISO-2015"></a>International Organization for Standardization / International Electrotechnical Commission "ISO/IEC 11179, Information Technology -- Metadata registries (MDR)", standard. <http://metadata-standards.org/11179/>, accessed 2018-06-07.
 
-[W3C-2014b] <a name="ref-W3C-2014b"></a>World Wide Web Consortium "RDF Schema 1.1", W3C Recommendation, 25 February 2014. <http://www.w3.org/TR/rdf-schema/>, accessed 2018-07-22.
+##### Not used
+[FIEL-2005] <a name="ref-FIEL-2005"></a>Fielding, Roy T. "[httpRange-14] Resolved", archived email, 2005. <http://lists.w3.org/Archives/Public/www-tag/2005Jun/0039.html>, accessed 2018-06-07.  
+
+[PC-2017] <a href="ref-PC-2017"></a>Productivity Commission, "Data Availability and Use", public inquiry report, 8 May 2017. <http://www.pc.gov.au/inquiries/completed/data-access>
 
 [REY-2012] <a name="ref-REY-2012"></a>Reynolds, Dave "Registry ontology", Version 0.2. OWL Ontology,  2012-11-11 <http://epimorphics.com/public/vocabulary/Registry.html>, accessed 2018-07-22.
 
-[AGLDWG-2018b] <a name="ref-AGLDWG-2018b"></a>Australian Government Linked Data Working Group, "Status Vocabulary". SKOS Vocabulary, 22 July 2018. <http://test.linked.data.gov.au/def/status>, accessed 2018-07-22.
+[TBL-2006] <a name="ref-TBL-2006"></a>Berners-Lee, Tim "Linked Data", web page, 2006. <http://www.w3.org/DesignIssues/LinkedData.html>, accessed 2018-06-07.  
+
+[W3C-2008] <a name="ref-W3C-2008"></a>World Wide Web Consortium "Cool URIs for the Semantic Web", W3C Interest Group Note, 03 December 2008. <http://www.w3.org/TR/cooluris/>, accessed 2018-06-07.  
+
+[W3C-2012] <a name="ref-W3C-2012"></a>World Wide Web Consortium "223 Best Practices URI Construction", wiki web page, 2012. <http://www.w3.org/2011/gld/wiki/223_Best_Practices_URI_Construction>, accessed 2018-06-07.
+
+[W3C-2014] <a name="ref-W3C-2014"></a>World Wide Web Consortium "RDF 1.1 Concepts and Abstract Syntax", W3C Proposed Recommendation, 09 January 2014. <http://www.w3.org/TR/rdf11-concepts/>, accessed 2018-06-07.  
+
+[W3C-2014b] <a name="ref-W3C-2014b"></a>World Wide Web Consortium "RDF Schema 1.1", W3C Recommendation, 25 February 2014. <http://www.w3.org/TR/rdf-schema/>, accessed 2018-07-22.
+
+[W3C-2014c] <a name="ref-W3C-2014c"></a>World Wide Web Consortium "The Organization Ontology", W3C Recommendation 16 January 2014. <https://www.w3.org/TR/vocab-org/>, accessed 2018-07-30.
+
+[W3C-2016] <a href="ref-W3C-2016">World Wide Web Consortium, "HashVsSlash", web page, 2016. <https://www.w3.org/wiki/HashVsSlash>, accessed 2018-07-27.
 
 [W3C-2017] <a name="ref-W3C-2017"></a>World Wide Web Consortium "HTML 5.2", W3C Recommendation, 14 December 2017. <https://www.w3.org/TR/html/>, accessed 2018-07-28.
+
+[W3C-2018] <a name="ref-W3C-2018"></a> World Wide Web Consortium, "Linked Data", web page, 2018. <https://www.w3.org/standards/semanticweb/data>, accessed 2018-07-27.
 
 ## 11. <a id="app-a"></a>Appendix A: Resource Linked Data requirements
 Resources for which the AGLDWG issues PID URIs must be valid Linked Data. Specific requirements for each type of resource are listed below.
@@ -439,14 +524,14 @@ Requirement | Function name | Purpose
 The following tests in the Python script file `ldreqs.py` within this repository must pass to ensure definitional resources pass the above criteria:
 
 Requirement | Function name | Purpose
--|-|-
+--|--|--
 1. | `dataset_required_1` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, resolves the properly `rdfs:label` for the URI
 3. | `dataset_required_3` | resolves the access URI of the resource, looks for subelements of that resource indicated via `dct:hasPart`, `reg:register` (subitems indicating the dataset as is a `reg:Register`)   
 
 The following tests in the Python script file `ldreqs.py` within this repository will also be run to provide feedback to the *Submitter*:
 
 Requirement | Function name | Purpose
--|-|-
+--|--|--
 2. | `dataset_optional_2` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking HTML, confirms the result is valid HTML
 4. | `dataset_optional_4` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, seeks sublements defined using hash or slash URIs stemming form the dataset URI by pattern matching subject triples with the dataset URI
 
