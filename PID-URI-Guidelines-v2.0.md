@@ -530,23 +530,23 @@ Requirement | Function name | Purpose
 
 The following tests in the Python script file `ldreqs.py` within this repository will also be run to provide feedback to the *Submitter*:
 
-Requirement | Function name | Purpose
----|---|---
-2. | `dataset_optional_2` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking HTML, confirms the result is valid HTML
-4. | `dataset_optional_4` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, seeks sublements defined using hash or slash URIs stemming form the dataset URI by pattern matching subject triples with the dataset URI
+Requirement | Function name | Purpose  
+---|---|---  
+2. | `dataset_optional_2` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking HTML, confirms the result is valid HTML  
+4. | `dataset_optional_4` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, seeks sublements defined using hash or slash URIs stemming form the dataset URI by pattern matching subject triples with the dataset URI  
 
 ## 12. <a id="app-b"></a>Appendix B: Resource catalogue item metadata
 Resources submitted to the AGLDWG for URI allocation are considered items submitted to a registry and are required to have metadata supplied according to the Registry Ontology [[REY-2012](#ref-REY-2012)]. This enables resource management, cataloguing and delivery of registry information as Linked Data. Entries in the PID Allocations Catalogue ([catalogue.linked.data.gov.au](http://catalogue.linked.data.gov.au)), which are required for PID URI allocation, can only be saved when valid metadata is entered. Entry metadata is also changed as the PID request that the record represents passes through an approval workflow. The catalogue uses simple labels in its forms to indicate elements and a mapping for each label and the equivalent formal predicates in Registry Ontology, and their required cardinality, are given in Table 2.
 
 **Table 2**: PID Allocations Catalogue for elements for catalogue items, their Registry Ontology equivalents, cardinalities and notes. The Registry Ontology element prefixes are:
 
-Catalogue Element | Registry Ontology Element |  Cardinality | Notes
+Catalogue Element | Registry Ontology Element |  Cardinality | Notes  
 ---|---|---|---
-Title | `rdfs:label` | 1 | -
-Description | `dct:description` | 1 | -
-- | `dct:dateSubmitted` | 1 | automatically filled on catalogue item creation
-Date Accepted | `dct:dateAccepted` | 0 or 1 | 0 when created, 1 when accepted
-Date Modified | `dct:modified` | 1 | automatically filled by catalogue
-Item Type | `reg:itemClass` | 1 | one of 'dataset', 'definitional' or 'register'
-Submitter | `reg:submitter` | 1 | one of the approved *Submitting Organisations*
-Acceptance Status | `reg:status` | 1 | one of the Registry Ontology's status vocab terms
+Title | `rdfs:label` | 1 | -  
+Description | `dct:description` | 1 | -  
+- | `dct:dateSubmitted` | 1 | automatically filled on catalogue item creation  
+Date Accepted | `dct:dateAccepted` | 0 or 1 | 0 when created, 1 when accepted  
+Date Modified | `dct:modified` | 1 | automatically filled by catalogue  
+Item Type | `reg:itemClass` | 1 | one of 'dataset', 'definitional' or 'register'  
+Submitter | `reg:submitter` | 1 | one of the approved *Submitting Organisations*  
+Acceptance Status | `reg:status` | 1 | one of the Registry Ontology's status vocab terms  
