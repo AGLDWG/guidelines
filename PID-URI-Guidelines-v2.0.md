@@ -2,11 +2,14 @@
 
 # URI Guidelines v2.0
 #### August 20 2018
+##### Authored by Nicholas Car\* and edited by members of the AGLDWG's *Recommendations* subgroup\*\*.
+\* <nicholas.car@csiro.au>  
+** [www.linked.data.gov.au/contact](http://www.linked.data.gov.au/contact)
 
 ## Preface
-*This document is a second and very different version of the* Guidelines *produced by the Australian Government Linked Data Working Group (AGLDWG). See *[the guidelines repository](https://github.com/AGLDWG/guidelines) *for previous versions.*
+This document describes how the Australian Government Linked Data Working Group (AGLDWG) assess requests for and allocates persistent URIs for Linked Data dataset, definitional resources and registers. It builds on both international public sector Linked Data URI allocation guidance, such as the United Kingdom's "Designing URI Sets for the UK Public Sector" [[CAB-2010](#ref-CAB-2010)], and the AGLDWG's own 5+ year's experience with persistent URI allocation.
 
-This document builds on international public sector Linked Data URI allocation guidance, such as the United Kingdom's "Designing URI Sets for the UK Public Sector" [[CAB-2010](#ref-CAB-2010)].
+*This document is a second and very different version of the* Guidelines *produced by the Australian Government Linked Data Working Group (AGLDWG). See *[the guidelines repository](https://github.com/AGLDWG/guidelines) *for previous versions.*
 
 For further context around this document and it's use, please see the AGLDWG's *Governance* web page:
 
@@ -494,16 +497,16 @@ Resources for which the AGLDWG issues PID URIs must be valid Linked Data. Specif
 The following tests in the Python script file `ldreqs.py` within this repository must pass to ensure definitional resources pass the above criteria:
 
 Requirement | Function name | Purpose
--|-|-
-1. | `definitional_required_1` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, resolves the properly `rdfs:label` for the URI
-4. | `definitional_required_4` | resolves RDF from the resource URI and looks within it for valid RDFS constructs
+---|---|---
+1 | `definitional_required_1` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, resolves the properly `rdfs:label` for the URI
+4 | `definitional_required_4` | resolves RDF from the resource URI and looks within it for valid RDFS constructs
 
 The following tests in the Python script file `ldreqs.py` within this repository will also be run to provide feedback to the *Submitter*:
 
 Requirement | Function name | Purpose
--|-|-
-2. | `definitional_optional_2` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking HTML, confirms the result is valid HTML
-3. | `definitional_optional_3` | parses the RDF implementation of the resource and searches for RDFS or OWL classes and determines whether their URIs are hash or slash URIs
+---|---|---
+2 | `definitional_optional_2` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking HTML, confirms the result is valid HTML
+3 | `definitional_optional_3` | parses the RDF implementation of the resource and searches for RDFS or OWL classes and determines whether their URIs are hash or slash URIs
 
 
 #### Datasets:
@@ -525,15 +528,15 @@ The following tests in the Python script file `ldreqs.py` within this repository
 
 Requirement | Function name | Purpose
 ---|---|---
-1. | `dataset_required_1` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, resolves the properly `rdfs:label` for the URI
-3. | `dataset_required_3` | resolves the access URI of the resource, looks for subelements of that resource indicated via `dct:hasPart`, `reg:register` (subitems indicating the dataset as is a `reg:Register`)   
+1 | `dataset_required_1` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, resolves the properly `rdfs:label` for the URI
+3 | `dataset_required_3` | resolves the access URI of the resource, looks for subelements of that resource indicated via `dct:hasPart`, `reg:register` (subitems indicating the dataset as is a `reg:Register`)   
 
 The following tests in the Python script file `ldreqs.py` within this repository will also be run to provide feedback to the *Submitter*:
 
 Requirement | Function name | Purpose  
 ---|---|---  
-2. | `dataset_optional_2` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking HTML, confirms the result is valid HTML  
-4. | `dataset_optional_4` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, seeks sublements defined using hash or slash URIs stemming form the dataset URI by pattern matching subject triples with the dataset URI  
+2 | `dataset_optional_2` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking HTML, confirms the result is valid HTML  
+4 | `dataset_optional_4` | resolves the access URI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking RDF formats, seeks sublements defined using hash or slash URIs stemming form the dataset URI by pattern matching subject triples with the dataset URI  
 
 ## 12. <a id="app-b"></a>Appendix B: Resource catalogue item metadata
 Resources submitted to the AGLDWG for URI allocation are considered items submitted to a registry and are required to have metadata supplied according to the Registry Ontology [[REY-2012](#ref-REY-2012)]. This enables resource management, cataloguing and delivery of registry information as Linked Data. Entries in the PID Allocations Catalogue ([catalogue.linked.data.gov.au](http://catalogue.linked.data.gov.au)), which are required for PID URI allocation, can only be saved when valid metadata is entered. Entry metadata is also changed as the PID request that the record represents passes through an approval workflow. The catalogue uses simple labels in its forms to indicate elements and a mapping for each label and the equivalent formal predicates in Registry Ontology, and their required cardinality, are given in Table 2.
@@ -542,9 +545,9 @@ Resources submitted to the AGLDWG for URI allocation are considered items submit
 
 Catalogue Element | Registry Ontology Element |  Cardinality | Notes  
 ---|---|---|---
-Title | `rdfs:label` | 1 | -  
-Description | `dct:description` | 1 | -  
-- | `dct:dateSubmitted` | 1 | automatically filled on catalogue item creation  
+Title | `rdfs:label` | 1 | \-  
+Description | `dct:description` | 1 | \-  
+\- | `dct:dateSubmitted` | 1 | automatically filled on catalogue item creation  
 Date Accepted | `dct:dateAccepted` | 0 or 1 | 0 when created, 1 when accepted  
 Date Modified | `dct:modified` | 1 | automatically filled by catalogue  
 Item Type | `reg:itemClass` | 1 | one of 'dataset', 'definitional' or 'register'  
