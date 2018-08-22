@@ -262,7 +262,7 @@ Metadata to be supplied for the registration of a Linked Data dataset, and thus 
 Entries in the AGLDWG LD Resource Catalogue are public from submission onwards.
 
 
-## 7. <a id="Definitionals"></a>Definitional Resources
+## 7. <a id="Definitional"></a>Definitional Resources
 Definitional Resources are Linked Data vocabularies, vocabulary terms, ontologies, ontology terms and potentially other, Linked Data, data model items. Currently, as per Datasets, URI patterning is provided by the AGLDWG at the whole-of-resource level (i.e. whole ontology or whole vocabulary) with URIs for subcomponents such as vocabulary terms or ontology class definitions to be implemented by the definitional resource managers, at their discretion.
 
 ### 7.1 Definitional resource PID URI pattern
