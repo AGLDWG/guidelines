@@ -23,8 +23,8 @@ For further context around this document and it's use, please see the AGLDWG's *
 5. [Resource Types](#ResourceTypes)
 6. [Datasets](#Datasets)
 7. [Definitional Resources](#Definitional)
-8. [Top-Level Registers](#TopLevelRegister)
-9. [Second-Level Registers](#SecondLevelRegister)
+8. [Top-Level Registers](#TopLevelRegisters)
+9. [Second-Level Registers](#SecondLevelRegisters)
 10. [References](#References)
 11. [Appendix A: Resource Linked Data requirements](#app-a)
 12. [Appendix B: Resource catalogue item metadata](#app-b)
@@ -333,7 +333,7 @@ Metadata to be supplied for the registration of a Linked Data defenitional resou
 Entries in the AGLDWG LD Resource Catalogue are public from submission onwards.
 
 
-## 8. <a id="TopLevelRegisterURIs"></a>Top-Level Register URIs
+## 8. <a id="TopLevelRegisters"></a>Top-Level Register URIs
 Top-Level Registers are an index of individual Linked Data objects, promoted to the 'top' of `linked.data.gov.au` for high visibility. Such registers formulated using very basic information - the identity of the register itself (given via its URI), metadata according to the Registry Ontology [[17](#ref-17)] listing the class(es) of items within it and potentially Registry Ontology links to sub pages of the register. lists of particular classes of LD objects that both allow shorter URI allocation than URIs from datasets and also allow items within them to not use URIs deriving from them. As with datasets and definitional resources registered with the AGLDWG for URI allocation, top-level registers require metadata to be lodged so that the content and ownership of the register is known and can be managed.
 
 Since top-level registers are designed to promote and aggregate assessed in order to determine the appropriateness of the requested URI to the class(es) of objects to be listed in the register.
@@ -421,7 +421,7 @@ Metadata to be supplied for the registration of a Linked Data register, and thus
 Entries in the AGLDWG LD Resource Catalogue are public from submission onwards.
 
 
-## 9. <a id="SecondLevelRegisterURIs"></a>Second-Level Register URIs
+## 9. <a id="SecondLevelRegisters"></a>Second-Level Register URIs
 At this stage, the AGLDWG recognises there are two sorts of Second-level Registers for which URIs may be allocated:
 
 1. subregisters of a Dataset
