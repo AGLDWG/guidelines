@@ -179,7 +179,7 @@ Presently the AGLDWG recognises four types of items for which PID URIs may be re
 
 More types of items may be added in the future. Such an addition will require this document to be updated.
 
-URIs for Datasets are created within the *Dataset Register*, for definitional resources within the *Def Register* and for Top-Level Register items within the *Top-Level Register*. This Top-Level Register contains both the Dataset Register and the Def Register as subregisters. Second-Level Register items are created as registers within individual Datasets or as modules within Top-Level Registers, as detailed in [Section 9](#SecondLevelRegisterURIs).
+URIs for Datasets are created within the *Dataset Register*, for definitional resources within the *Def Register* and for Top-Level Register items within the *Top-Level Register*. This Top-Level Register contains both the Dataset Register and the Def Register as subregisters. Second-Level Register items are created as registers within individual Datasets or as modules within Top-Level Registers, as detailed in [Section 9](#9-second-level-register-uris).
 
 The next four sections of this document describe how URIs for these four classes of items are formulated and the processes to apply for them.
 
