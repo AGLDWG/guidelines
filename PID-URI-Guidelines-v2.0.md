@@ -161,7 +161,7 @@ An item's acceptance for PID allocation is indicated with a *status*, terms for 
 
  A general state diagram of resources' statuses is given in Figure 4 below.
 
-![](status-states.png)
+![](status-states.png)  
 **Figure 4**: State diagram showing status states of a resource and actions causing state change.  
 
 Following Figure 4, it can be seen that minimal successful path for a resource from first PID URI request to operational implementation is:
