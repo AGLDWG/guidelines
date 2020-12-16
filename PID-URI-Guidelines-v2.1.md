@@ -215,8 +215,8 @@ The tests for what constitutes a valid Linked Data dataset are articulated in [A
 The pattern for Dataset PID IRIs is:
 
 ```
-dataset-IRI ::=  "https://linked.data.gov.au/dataset/" dataset-id
-dataset-id ::= *(ALPHA | DIGIT | "-")
+dataset-IRI = "https://linked.data.gov.au/dataset/" dataset-id
+dataset-id = *(ALPHA / DIGIT / "-")
 ```
 
 Where `dataset-id` is both unique within the Dataset Register and conceptually linked to the dataset.
@@ -228,12 +228,12 @@ An example is that a Linked Data dataset titled "Geocoded National Address File"
 Subelements of the dataset may have IRIs generated with the following pattern:
 
 ```
-dataset-subelement-IRI ::=  dataset-IRI hash-or-slash subelement-path
-hash-or-slash ::= "#" | "/"
-subelement-path ::= subelement-hash-id | class-path subelement-slash-id
-subelement-hash-id = *(ALPHA | DIGIT | "-")
-class-path ::= *(ALPHA | DIGIT | "-" | "/")
-subelement-slash-id ::= *(ALPHA | DIGIT | "-")
+dataset-subelement-IRI = dataset-IRI hash-or-slash subelement-path
+hash-or-slash = "#" / "/"
+subelement-path = subelement-hash-id / class-path subelement-slash-id
+subelement-hash-id = *(ALPHA / DIGIT / "-")
+class-path = *(ALPHA / DIGIT / "-" / "/")
+subelement-slash-id = *(ALPHA / DIGIT / "-")
 ```
 
 Where the "gnaf" dataset, using hash IRIs for Address subelements "GA1234" could make a `dataset-subelement-IRI` of:
@@ -248,10 +248,10 @@ Where the "gnaf" dataset, using slash IRIs for Address subelement "GA1234" could
 This process follows the general process as outlined in Figure 1.
 
 * *Submitter* must be eligible, as per Req 6
-  * *Submitter* initiates a requests a PID IRI allocation for a dataset IRI by creating a complete catalogue record in the AGLDWG LD Resource Catalogue
+  * *Submitter* initiates a request for a PID IRI allocation for a dataset IRI by creating a complete catalogue record in the AGLDWG LD Resource Catalogue
   * the resource type must be set to 'dataset'
   * request approval status to `submitted`
-* *Controlling Committee* is automatically notified to review the requests by the catalogue
+* *Controlling Committee* is automatically notified to review the request by the catalogue
 * *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a dataset described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
   * if approved, request approval status to `approved`
   * if not approved, resource status set to `not approved`
@@ -284,8 +284,8 @@ Definitional Resources are Linked Data vocabularies, vocabulary terms, ontologie
 The pattern for Definitional PID IRIs is:
 
 ```
-definitional-IRI ::=  "https://linked.data.gov.au/def/" definitional-id
-definitional-id ::= *(ALPHA | DIGIT | "-")
+definitional-IRI = "https://linked.data.gov.au/def/" definitional-id
+definitional-id = *(ALPHA / DIGIT / "-")
 ```
 
 Where `definitional-id` is both unique within the Definitional Resources Register and conceptually linked to the resource.
@@ -301,12 +301,12 @@ Another example is that a vocabulary established listing all the types of citize
 Subelements of the definitional resources may have IRIs generated with the following pattern:
 
 ```
-definitional-subelement-IRI ::=  definitional-IRI hash-or-slash subelement-path
-hash-or-slash ::= "#" | "/"
-subelement-path ::= subelement-hash-id | class-path subelement-slash-id
-subelement-hash-id = *(ALPHA | DIGIT | "-")
-class-path ::= *(ALPHA | DIGIT | "-" | "/")
-subelement-slash-id ::= *(ALPHA | DIGIT | "-")
+definitional-subelement-IRI = definitional-IRI hash-or-slash subelement-path
+hash-or-slash = "#" / "/"
+subelement-path = subelement-hash-id / class-path subelement-slash-id
+subelement-hash-id = *(ALPHA / DIGIT / "-")
+class-path = *(ALPHA / DIGIT / "-" / "/")
+subelement-slash-id = *(ALPHA / DIGIT / "-")
 ```
 
 Where the "gnaf" ontology, using hash IRIs could make a `definitional-subelement-IRI` for an `Address` class of:
@@ -325,15 +325,16 @@ or, if the `StreetType` codes were modularised within the ontology perhaps:
 This process follows the general process as outlined in Figure 1.
 
 * *Submitter* must be eligible, as per Req 6
-  * *Submitter* initiates a requests a PID IRI allocation for a dataset IRI by creating a complete catalogue record in the AGLDWG LD Resource Catalogue
+  * *Submitter* initiates a request for a PID IRI allocation for a
+    definitional resource IRI by creating a complete catalogue record in the AGLDWG LD Resource Catalogue
   * the resource type must be set to 'definitional'
   * request approval status to `submitted`
-* *Controlling Committee* is automatically notified to review the requests by the catalogue
-* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a dataset described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
+* *Controlling Committee* is automatically notified to review the request by the catalogue
+* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a definitional resource described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
   * if approved, request approval status to `approved`
   * if not approved, resource status set to `not approved`
   * *Submitter* automatically notified of status change
-* if approved, *Steward* implements a IRI redirect to the hosted dataset and tests implementation
+* if approved, *Steward* implements a IRI redirect to the hosted definitional resource and tests implementation
   * if no collisions with existing patterns are found:
     * if the resource is ready, approval status to `stable`
     * if the resource is not ready, else approval status set to `reserved`
@@ -342,13 +343,13 @@ This process follows the general process as outlined in Figure 1.
 * *Submitting Organization* is free to use allocated IRIs
 
 ### 7.3 Required Metadata
-Metadata to be supplied for the registration of a Linked Data defenitional resource, and thus the allocation of a IRI for it, must constitute a valid record for such within the AGLDWG LD Resource Catalogue. Record validity is determined using the process outlined in [Appendix B](#app-b).
+Metadata to be supplied for the registration of a Linked Data definitional resource, and thus the allocation of an IRI for it, must constitute a valid record for such within the AGLDWG LD Resource Catalogue. Record validity is determined using the process outlined in [Appendix B](#app-b).
 
 Entries in the AGLDWG LD Resource Catalogue are public from submission onwards.
 
 
 ## 8. <a id="TopLevelRegisters"></a>Top-Level Register IRIs
-Top-Level Registers are an index of individual Linked Data objects, promoted to the 'top' of `linked.data.gov.au` for high visibility. Such are registers formulated using very basic information:
+Top-Level Registers are an index of individual Linked Data objects, promoted to the 'top' of `linked.data.gov.au` for high visibility. Such registers are formulated using very basic information:
 
 * the identity of the register itself (given via its IRI)
 * metadata according to the Registry Ontology [[17](#ref-17)]
@@ -385,12 +386,12 @@ If a *Submitting Organization* wishes to use a top-level register already alloca
 
 Modules requested within a top-level register will be presented as sub-registers of the Top-Level Register. Management of such is the responsibility of the Top-Level Register's manager - the original *Submitting Organisation* who was allocated the IRI for it, not the AGLDWG.
 
-### 8.1 Top-Level IRI pattern
+### 8.1 Top-Level Register IRI pattern
 The pattern for allocating Top-Level Register IRIs is:
 
 ```
-register-IRI ::=  "https://linked.data.gov.au/" register-id "/"
-register-id ::= *(ALPHA | DIGIT | "-")
+register-IRI = "https://linked.data.gov.au/" register-id "/"
+register-id = *(ALPHA / DIGIT / "-")
 ```
 
 Where `register-id` is some approximation of the class(es) of object which the register contains. What is a fair approximation and what is not will be judged by the *Controlling Committee*.
@@ -410,23 +411,23 @@ where 'org' is a well-known shortened form of 'organisation'. Either of these re
 Subregisters within a Top-Level Register are to be managed by the manager of the Top-Level register with the `module-id` to be allocated by them. The total IRI pattern for this form of modularised register is:
 
 ```
-modularised-register-IRI ::= register-IRI "/" module-id
-module-id ::= *(ALPHA | DIGIT | "-")
+modularised-register-IRI = register-IRI "/" module-id
+module-id = *(ALPHA / DIGIT / "-")
 ```
 
 ### 8.2 Registration Process
 This process follows the general process as outlined in Figure 1.
 
 * *Submitter* must be eligible, as per Req 6
-  * *Submitter* initiates a requests a PID IRI allocation for a dataset IRI by creating a complete catalogue record in the AGLDWG LD Resource Catalogue
-  * the resource type must be set to 'definitional'
+  * *Submitter* initiates a requests a PID IRI allocation for a top-level register IRI by creating a complete catalogue record in the AGLDWG LD Resource Catalogue
+  * the resource type must be set to 'top-level register'
   * request approval status to `submitted`
-* *Controlling Committee* is automatically notified to review the requests by the catalogue
-* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a dataset described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
+* *Controlling Committee* is automatically notified to review the request by the catalogue
+* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a top-level register described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
   * if approved, request approval status to `approved`
   * if not approved, resource status set to `not approved`
   * *Submitter* automatically notified of status change
-* if approved, *Steward* implements a IRI redirect to the hosted dataset and tests implementation
+* if approved, *Steward* implements a IRI redirect to the hosted top-level register and tests implementation
   * if no collisions with existing patterns are found:
     * if the resource is ready, approval status to `stable`
     * if the resource is not ready, else approval status set to `reserved`
@@ -435,7 +436,7 @@ This process follows the general process as outlined in Figure 1.
 * *Submitting Organization* is free to use allocated IRIs
 
 ### 8.3 Required Metadata
-Metadata to be supplied for the registration of a Linked Data register, and thus the allocation of a IRI for it, must constitute a valid record for such within the AGLDWG LD Resource Catalogue. Record validity is determined using the process outlined in [Appendix B](#app-b).
+Metadata to be supplied for the registration of a Linked Data top-level register, and thus the allocation of a IRI for it, must constitute a valid record for such within the AGLDWG LD Resource Catalogue. Record validity is determined using the process outlined in [Appendix B](#app-b).
 
 Entries in the AGLDWG LD Resource Catalogue are public from submission onwards.
 
@@ -541,7 +542,7 @@ Requirement | Function name | Purpose
 2. ***SHOULD*** be presented in Hypertext Mark-Up Language version 5, HTML5 [[W3C-2017](#ref-W3C-2017)]
   * the RDF version is considered point-of-truth; the HTML version must faithfully represent the RDF contents
   * the HTML version, if present, will be the default version displayed if no content negotiation directives are used
-  * for AGLDWG-hosted resources, the HTML version will be auto-built from supplied RDF using one of several tools: LODE2 for ontologies ([lode2.linked.data.gov.au](http://lode2.linked.data.gov.au)) and the RDA's RVA portal ([vocabs.ands.org.au](http://vocabs.ands.org.au)) for vocabularies.
+  * for AGLDWG-hosted resources, the HTML version will be auto-built from supplied RDF using one of several tools: LODE2 for ontologies ([lode2.linked.data.gov.au](http://lode2.linked.data.gov.au)) and the RDA's RVA portal ([vocabs.ardc.edu.au](http://vocabs.ardc.edu.au)) for vocabularies.
 3. ***MAY*** use either hash or slash IRIs for subelements
   * the AGLDWG can host single-file definitional resources which use hash IRIs
 4. ***MUST*** be valid RDFS documents adhering to the RDF Schema specification [[W3C-2014b](#ref-W3C-2014b)]
