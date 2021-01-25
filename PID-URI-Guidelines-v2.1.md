@@ -9,6 +9,22 @@
 ## Preface
 This document describes how the Australian Government Linked Data Working Group (AGLDWG) assess requests for and allocates persistent IRIs for Linked Data dataset, definitional resources and registers. It builds on both international public sector Linked Data IRI allocation guidance, such as the United Kingdom's "Designing URI Sets for the UK Public Sector" [[CAB-2010](#ref-CAB-2010)], and the AGLDWG's own 7+ year's experience with persistent IRI allocation.
 
+## Table of Contents
+1. [Preface](#Preface)
+2. [Changelog](#Changelog)
+3. [Conformance](#Conformance)
+4. [Introduction](#Introduction)
+5. [Persistent domain](#PersistentDomain)
+6. [IRI Registration](#PIDIRIRegistration)
+7. [Resource Types](#ResourceTypes)
+8. [Datasets](#Datasets)
+9. [Definitional Resources](#Definitional)
+10. [Top-Level Registers](#TopLevelRegisters)
+11. [Second-Level Registers](#SecondLevelRegisters)
+12. [References](#References)
+13. [Appendix A: Resource Linked Data requirements](#app-a)
+14. [Appendix B: Resource catalogue item metadata](#app-b)
+
 ## Changelog
 This version of the document contains only small editorial changes to the 2.0 version of the *Guidelines*. The changes are:
 
@@ -26,20 +42,6 @@ See [the guidelines repository](https://github.com/AGLDWG/guidelines) for previo
 For further context around this document and it's use, please see the AGLDWG's *Governance* web page:
 
 * [www.linked.data.gov.au/governance](https://www.linked.data.gov.au/governance)
-
-## Table of Contents
-1. [Conformance](#Conformance)
-2. [Introduction](#Introduction)
-3. [Persistent domain](#PersistentDomain)
-4. [IRI Registration](#PIDIRIRegistration)
-5. [Resource Types](#ResourceTypes)
-6. [Datasets](#Datasets)
-7. [Definitional Resources](#Definitional)
-8. [Top-Level Registers](#TopLevelRegisters)
-9. [Second-Level Registers](#SecondLevelRegisters)
-10. [References](#References)
-11. [Appendix A: Resource Linked Data requirements](#app-a)
-12. [Appendix B: Resource catalogue item metadata](#app-b)
 
 ## 1. <a id="Conformance"></a> Conformance
 The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHOULD*, *SHOULD NOT*, *RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as defined in [[IETF-1997](#ref-IETF-1997)].
