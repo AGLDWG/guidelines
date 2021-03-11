@@ -330,6 +330,7 @@ This process follows the general process as outlined in Figure 1.
   * *Submitter* initiates a request for a PID IRI allocation for a
     definitional resource IRI by creating a complete catalogue record in the AGLDWG LD Resource Catalogue
   * the resource type must be set to 'definitional'
+    * **NOTE**: the AGLDWG's system to request IRIs might require that a definitional resouce subtype - _vocabulary_, _ontology_ etc. be selected
   * request approval status to `submitted`
 * *Controlling Committee* is automatically notified to review the request by the catalogue
 * *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a definitional resource described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
