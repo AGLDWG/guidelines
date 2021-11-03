@@ -6,26 +6,27 @@
 \* <nicholas.car@surroundaustralia.com>  
 ** [www.linked.data.gov.au/contact](https://www.linked.data.gov.au/contact)
 
-## Preface
+## 1. Preface
 This document describes how the Australian Government Linked Data Working Group (AGLDWG) assess requests for and allocates persistent IRIs for Linked Data dataset, definitional resources and registers. It builds on both international public sector Linked Data IRI allocation guidance, such as the United Kingdom's "Designing URI Sets for the UK Public Sector" [[CAB-2010](#ref-CAB-2010)], and the AGLDWG's own 7+ year's experience with persistent IRI allocation.
 
-## Table of Contents
+## 2. Table of Contents
 1. [Preface](#Preface)
-2. [Changelog](#Changelog)
-3. [Conformance](#Conformance)
-4. [Introduction](#Introduction)
-5. [Persistent domain](#PersistentDomain)
-6. [IRI Registration](#PIDIRIRegistration)
-7. [Resource Types](#ResourceTypes)  
-    7.1. [Datasets](#Datasets)  
-    7.2. [Definitional Resources](#Definitional)  
-    7.3. [Top-Level Registers](#TopLevelRegisters)  
-    7.4. [Second-Level Registers](#SecondLevelRegisters)  
-8. [References](#References)
-9. [Appendix A: Resource Linked Data requirements](#app-a)
-10. [Appendix B: Resource register resource metadata](#app-b)
+2. [Table of Contents](#TableOfContents)
+3. [Changelog](#Changelog)
+4. [Conformance](#Conformance)
+5. [Introduction](#Introduction)
+6. [Persistent domain](#PersistentDomain)
+7. [IRI Registration](#PIDIRIRegistration)
+8. [Resource Types](#ResourceTypes)  
+    8.1. [Datasets](#Datasets)  
+    8.2. [Definitional Resources](#Definitional)  
+    8.3. [Top-Level Registers](#TopLevelRegisters)  
+    8.4. [Second-Level Registers](#SecondLevelRegisters)  
+9. [References](#References)
+10. [Appendix A: Resource Linked Data requirements](#app-a)
+11. [Appendix B: Resource register resource metadata](#app-b)
 
-## Changelog
+## 3. Changelog
 This version of the document contains the following changes to the 2.1 version of the *Guidelines*: 
 
 1. use of IS0 19135 [[ISO-2014](#ref-ISO-2014)] for IRI registration procedure and roles, instead of ISO 11179 [[ISO-2015](#ref-ISO-2015)]
@@ -39,7 +40,7 @@ For further context around this document and it's use, please see the AGLDWG's *
 
 * [www.linked.data.gov.au/governance](https://www.linked.data.gov.au/governance)
 
-## 1. <a id="Conformance"></a> Conformance
+## 4. <a id="Conformance"></a> Conformance
 The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHOULD*, *SHOULD NOT*, *RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as defined in [[IETF-1997](#ref-IETF-1997)].
 
 Roles associated with this register, *Register Owner*, *Submitter* *Submitting Organization*, *Control Body*, *Register Manager*, *Registry Manager* and *Register User*, are to be interpreted as defined in the AGLDWG's 'Registry Roles Vocabulary' [[AGLDWG-2021](#ref-AGLDWG-2021)] which is an interpretation of the roles defined in [[ISO-2014](#ref-ISO-2014)], with some small extensions.
@@ -48,22 +49,22 @@ Statuses for resources in the register are *accepted*, *deprecated*, *retired*, 
 
 IRI patterns are expressed using Augmented Backus-Naur Form, as defined in [[IETF-2008](#ref-IETF-2008)].
 
-## 2. <a id="Introduction"></a>Introduction    
+## 5. <a id="Introduction"></a>Introduction    
 Government published, public sector information (PSI), usually about the things agencies are responsible for, is intended to be re-used by many, perhaps initially unknown, applications over time. This is to maximise its value to the nation and this aim is communicated in many places, such as the Productivity Commission's "Data Availability and Use" report of 2017 [[PC-2017](#ref-PC-2017)]. For this reason, it is important that elements PSI are able to be identified and accessed in consistent ways for long periods, perhaps multiple decades.
 
 Government departments and agencies often assign identifiers to many digital PSI things and non-public information resources they are responsible for - e.g. datasets, classification concepts, hospitals, equipment, client interactions. These identifiers are then used when referring to or making statements about particular things. For example, when referring to a road closure, the identifier (e.g. "M5") will be used to inform the public or when referring to a particular census Mesh Block, its Australian bureau of Statistics-issued identifier, perhaps "80006300000" will be used. These identifiers might be well known but are most often not actionable, i.e. they cannot be easily used to discover information about the thing they identify, even if it exists, in standard ways.
 
 The Australian Government Linked Data Working Group (AGLDWG) advocates the use of Linked Data [[W3C-2018](#ref-W3C-2018)] as a particular set of technologies to be used for Internet-distributed, machine-readable data and, due to this, advocates the use of Internationalized Resource Identifiers (IRIs) as identifiers for things. The use of IRIs as item identifiers greatly improves their accessibility and can also improve their endurance.
 
-### 2.1 Internationalized Resource Identifiers (IRIs)
+### 5.1 Internationalized Resource Identifiers (IRIs)
 Linked Data uses IRIs which are part of a single, global, identification system used on the World Wide Web, similar to telephone numbers in a public switched telephone network. We are all familiar with IRIs at work - often referred to by older names of *Uniform Resource Identifier* (URI) or *Uniform Resource Locator* (URL) - due to their use for addresses in browsers for web pages. IRIs are a key technology supporting Linked Data offering a generic, universal and infinitely expandable mechanism to identify *things*. In order to publish data in a Linked Data fashion, government needs to represent the identifiers they use for things using IRIs.
 
 Sir Tim Berners-Lee, who created many aspects of the World Wide Web we now take for granted, defined principles for the use of IRIs with Linked Data [[TBL-2009](#ref-TBL-2006)]. This document builds on those principles which, summarised, are:
 
-#### 2.1.1. Use HTTP IRIs
+#### 5.1.1. Use HTTP IRIs
 Addressing two of the four principles, *'use URIs'* and *'use HTTP URIs'*, governments and their agencies publishing Linked Data ***MUST*** provide HTTP IRIs as identifiers for resources, in order to support reuse and data integration/linking on the Web in a Linked Data fashion. HTTP IRIs enable IRIs to be "looked-up" or "dereferenced", which in turn provides access, via a Web browser, to  representations of the resource identified by these IRIs.
 
-#### 2.1.2. Provide a machine-readable representation of the resource identified by the IRI
+#### 5.1.2. Provide a machine-readable representation of the resource identified by the IRI
 In order to enable HTTP IRIs to be "dereferenceable", data publishers may have to set up the necessary infrastructure (e.g. DNS & HTTP servers) to serve representations or descriptions of resources (e.g. a human-readable HTML representation or a machine-readable RDF/XML representation). For a resource to be considered Linked Data, a publisher ***MUST*** publish it using RDF and ***MUST*** publish at least one machine-readable representation of it (e.g. RDF/XML, JSON-LD, Turtle) via the HTTP IRI identifying the resource.
 
 Requirement | Description | Conformance
@@ -71,12 +72,12 @@ Requirement | Description | Conformance
 <a id="req-1"></a>[Req 1] | Use HTTP IRIs for Linked Data resources | ***MUST***
 <a id="req-2"></a>[Req 2] | Provide at least one machine-readable representation in RDF at a resource's IRI. | ***MUST***
 
-#### 2.1.3 IRI persistence
+#### 5.1.3 IRI persistence
 Much thought has gone into ensuring that IRIs for things can be made to keep working for a long time, starting with their technical design to avoid specific technology dependence (addressed by [[TBL-2009](#ref-TBL-2006)] and for Linked Data use in [[W3C-2008](#ref-W3C-2008)]) and extending to the governance arrangements for them to avoid, or at least make more resilient, their social systems dependence. Principles for successful persistent identifier (PID) generation are articulated in papers such as "The challenge of ensuring persistency of identifier systems" [[CAR-2017](#ref-CAR2-17)] which, among other things, advocates for the use of organisationally-independent identifiers.
 
 Beyond confirming adherence to these principles, the AGLDWG provides instruction on how to create IRIs for certain kinds of resources according to IRI construction best practice [[W3C-2012](#ref-W3C-2012)] and also provides a government organisation-independent namespace for them to use: `linked.data.gov.au`. This namespace, an internet domain, is managed by the AGLDWG.
 
-## 3. <a id="PersistentDomain"></a>Persistent Domain
+## 6. <a id="PersistentDomain"></a>Persistent Domain
 The AGLDWG has dedicated the IRI domain `linked.data.gov.au` to IRI persistent identifiers (PIDs) for Linked Data resources. This is to be able to supply infinitely many PIDs using a domain that is not coupled to a particular agency's name or function, for example `dfat.gov.au` which is coupled to the Department of Foreign Affairs and Trade (DFAT). Agency names and functions change over time and are thus domains based on them are not persistent. The use of `linked.data.gov.au` is protected by a Memorandum of Understanding signed by the managing agency, the Digital Transformation Agency and 5 agencies interested in Linked Data [[AGLDWG-2018](#ref-AGLDWG-2018)] which came into effect in May, 2018. The MoU requires any proposed changes to the management or use of the domain to be mooted amongst the MoUs signatories.
 
 Requirement | Description | Conformance
@@ -89,7 +90,7 @@ The AGLDWG maintains a public register of requests for PIDs within `linked.data.
 
 * [catalogue.linked.data.gov.au](https://catalogue.linked.data.gov.au)
 
-### 3.1 Previously used domains
+### 6.1 Previously used domains
 The AGLDWG maintains two legacy persistent domains:
 
 1. `environment.data.gov.au`
@@ -97,23 +98,23 @@ The AGLDWG maintains two legacy persistent domains:
 
 These two domains contains persistent identifiers minted in 2013 - 2018. Resources allocated PIDs within them appear in the resource register ([catalogue.linked.data.gov.au](http://catalogue.linked.data.gov.au)) and will be maintained indefinitely, however no new PIDs will be allocated using these legacy domains.
 
-### 3.1 Test domain
+### 6.2 Test domain
 The AGLDWG maintains a dedicated testing domain, `test.linked.data.gov.au`. *Submitting Organizations* (see role definition below) may request use of this domain to test redirection mechanics for PID before seeking a PID allocation using `linked.data.gov.au`.
 
-### 3.2 Other domains
+### 6.3 Other domains
 The AGLDWG maintains further subdomains of `linked.data.gov.au` for operational reasons such as website hosting (`www.linked.data.gov.au`) and resource cataloguing (`catalogue.linked.data.gov.au`). These domains, while maintained by the AGLDWG are not to be considered persistent.
 
-## 4. <a id="PIDRegistration"></a>PID Registration
+## 7. <a id="PIDRegistration"></a>PID Registration
 Due to the central management by the AGLDWG of the `linked.data.gov.au` resource and its requirement to be shared among many agencies, PIDs allocated using it need to be registered to avoid collisions (agencies wanting the same PIDs for different things) and also anonymous orphans (PIDs once registered which become non-functional and for which ownership information is lost). Previous approaches to PID allocation by the AGLDWG that did not require registration resulted in ungoverned PIDs.
 
 The AGLDWG notes item registration is both commonplace for shared government resources (viz. registration of datasets within [data.gov.au](https://data.gov.au)) and also for IRI-based identifiers (viz. [purl.org](http://purl.org) and [w3id.org](https://w3id.org/)).
 
 The AGLDWG requires all allocated PIDs to be registered provides guidance below on what types of PIDs may be registered, and the process for registration, including information required from registrants.
 
-Registration processes (Section 6.2, 7.2 & 8.2 below) follow those of "ISO 19135 Geographic information — Procedures for item registration ISO/DIS 19135-1",[[ISO-2014](#ref-ISO-2014)] with the assignment of resource status of *accepted* (see Section 4.3) being the necessary and sufficient criteria for the technical implementation of an IRI redirection for the PID.
+Registration processes (Section 6.2, 7.2 & 8.2 below) follow those defined in "ISO 19135 Geographic information — Procedures for item registration ISO/DIS 19135-1", [[ISO-2014](#ref-ISO-2014)] with the assignment of resource status of *accepted* (see Section 4.3) being the necessary and sufficient criteria for the technical implementation of an IRI redirection for the PID.
 
-### 4.1 Registration roles
-People requesting PIDs are *Submitters*, acting on behalf of an organisation, fullfilling the role of a *Submitting Organization*. These organisations are often, but do not have to be, members organisations of the AGLDWG. See [www.linked.data.gov.au/join](https://www.linked.data.gov.au/join) for more information about joining the AGLDWG.
+### 7.1 Registration roles
+People requesting PIDs are *Submitters*, acting on behalf of an organisation which fullfills the role of a *Submitting Organization*. These organisations are often, but do not have to be, members organisations of the AGLDWG. See [www.linked.data.gov.au/join](https://www.linked.data.gov.au/join) for more information about joining the AGLDWG.
 
 The AGLDWG as a whole plays the role of *Register Owner* with the *Register* being the list of all PIDs requested and allocated for `linked.data.gov.au`. The co-chairs of the AGLDWG play the role of *Register Manager* and perform most register management actions on behalf of the AGLDWG. A *Control Body* consisting of AGLDWG member organisation's representatives conduct reviews of PID requests, as delegated by the co-chairs. The technical management of the register and the associated IRI redirection system is conducted by AGLDWG members in the role of *Registry Manager* at the behest of the *Registery Manager*.
 
@@ -132,21 +133,16 @@ Role | Group
 *Submitter* | persons acting on behalf of a *Submitting Organization*
 *Register User* | Everyone not listed above using the Register
 
-### 4.2 Registration workflow
-The processing of items for which PIDs are requested follow workflows. The general workflow for item processing is given in Figure 1.
+### 7.2 Registration workflows
 
-![](workflow-approval.png)  
-**Figure 1**: Workflow diagram showing the general workflow for the approval processing of PID IRI allocation requests. Approval statuses are marked.
+The processing of items for which PIDs are requested follow workflows, as do other actions such as to move a Registered Item from *stable* to another state. 
 
-A more detailed workflow for resource review is given in Figure 2.
+#### 7.2.1 Item Registration Workflow
 
-![](workflow-review.png)  
-**Figure 2**: Workflow diagram showing detailed steps within the resource review workflow. Approval statuses are marked.
+The Item Registration Workflow for registered item request processing is given in Figure 1.
 
-A more detailed workflow showing PID IRI implementation is given in Figure 3.
-
-![](workflow-implementation.png)  
-**Figure 3**: Workflow diagram showing detailed steps within the PID IRI implementation workflow. Approval statuses are marked.
+<a href="workflow-approval.png"><img src="workflow-approval.png" style="width: 50%" /></a><br />
+**Figure 1**: Workflow diagram showing the general workflow for the processing of PID IRI allocation requests which usually leads to item registration. Approval statuses are marked. The previous, ISO11179-based version of this workflow for Guidlines v1.1 and previous is retained in the file [workflow-approval-old.png](workflow-approval-old.png).
 
 Notes on specific workflows per resource type are given below in Sections 6 - 9.
 
@@ -154,13 +150,29 @@ Requirement | Description | Conformance
 ---|---|---
 <a id="req-4"></a>[Req 4] | Submitters requesting PIDs must follow the AGLDWG's PID IRI allocation workflows and submit their requests to the Linked Data PID Register | ***MUST***
 
-### 4.3 Approval status
-An item's acceptance for PID allocation is indicated with a *status*, terms for which are taken from the Registry Ontology's status vocabulary. The original publication of this vocabulary is [[REY-2012](#ref-REY-2012)] and the AGLDWG has republished it at [[AGLDWG-2018b](#ref-AGLDWG-2018)]) to enable better visibility. The status vocabulary term hierarchy is:
+#### 7.2.2 Item Deprecation Workflow
+
+The Item Deprecation Workflow for registered item request processing is described as follows:
+
+* IF a registered PID with status*stable* failes to resolve during a routine resolution test
+* THEN
+   * the PID *submitter* is notified
+   * a 2 week countdown is initiated
+   * the PID's status is changed to *unstable*
+
+* IF a PID fails to resolve for a 2 week period
+* THEN
+    * the PID *submitter* is notified
+    * the PID's status is changed to *retired*
+
+### 7.3 Registered Item Status
+An item's status within the Register is indicated with a *status*, terms for which are mostly taken from the Registry Ontology's status vocabulary. The original publication of this vocabulary is [[REY-2012](#ref-REY-2012)] and the AGLDWG has republished it at [[AGLDWG-2018b](#ref-AGLDWG-2018)]) to enable better visibility. The status vocabulary term hierarchy is:
 
 * [accepted](https://linked.data.gov.au/def/status/accepted)
   * [deprecated](https://linked.data.gov.au/def/status/deprecated)
     * [retired](https://linked.data.gov.au/def/status/retired)
     * [superseded](https://linked.data.gov.au/def/status/superseded)
+    * [unstable](https://linked.data.gov.au/def/status/unstable)
   * [valid](https://linked.data.gov.au/def/status/valid)
     * [experimental](https://linked.data.gov.au/def/status/experimental)
     * [stable](https://linked.data.gov.au/def/status/stable)
@@ -169,17 +181,17 @@ An item's acceptance for PID allocation is indicated with a *status*, terms for 
   * [reserved](https://linked.data.gov.au/def/status/reserved)
   * [submitted](https://linked.data.gov.au/def/status/submitted)
 
- A state diagram of resources' statuses is given in Figure 4 below.
+ A state diagram of resources' statuses is given in Figure 2 below.
 
 ![](status-states.png)  
-**Figure 4**: State diagram showing status states of a resource and actions causing state change.  
+**Figure 2**: State diagram showing status states of a resource and actions causing state change.  The Status States Diagram for Guidlines v1.1 and previous is retained in the file [status-states-old.png](status-states-old.png).
 
-Following Figure 4, it can be seen that minimal successful path for a resource from first PID IRI request to operational implementation is:
+Following Figure 2, it can be seen that minimal successful path for a resource from first PID IRI request to operational implementation is:
 
 `submitted -> accepted -> stable`
 
 
-## 5. <a id="ResourceTypes"></a>Resource Types
+## 8. <a id="ResourceTypes"></a>Resource Types
 Presently the AGLDWG recognises four types of items for which PIDs may be requested:
 
 1. Dataset
@@ -189,16 +201,16 @@ Presently the AGLDWG recognises four types of items for which PIDs may be reques
 
 There is an additional resource type, *Organisation*, for which IRIs are created automatically - to identifier AGLDWG member organisations.
 
-More types of items may be added in the future. Such an addition will require this document to be updated.
+More types of items may be added in the future. Such additions would require this document to be updated.
 
 IRIs for Datasets are created within the *Dataset Register*, for definitional resources within the *Def Register* and for Top-Level Register items within the *Top-Level Register*. This Top-Level Register contains the Dataset Register, the Def Register and the Organisations Register as subregisters. Second-Level Register items are created as registers within individual Datasets or as modules within Top-Level Registers, as detailed in [Section 9](#9-second-level-register-IRIs).
 
 The next four sections of this document describe how IRIs for the four type of items for which they may be requested are formulated and the processes to apply for them.
 
-#### NOTE types implemented 
-_After 2+ years of operations of these *Guidelines* in their present form, from pre-2018 to 2020, no allocations of IRIs for resource types other than Dataset or Definitional Item have been made. This does not mean that allocations for other resource types cannot be made but that the community has so far not found pressing use for resources other than Dataset or Definitional Item. The Top-Level Register guidance here is retained without afferming its expected use: it is a technical possibility with international precedence for use (see [[CAB-2010](#ref-CAB-2010)]) and the AGLDWG may, or may not, choose to allow Top-Level Register registration in the future._
+> NOTE: types implemented  
+> _After 2+ years of operations of these *Guidelines* in their present form, from pre-2018 to 2020, no allocations of IRIs for resource types other than Dataset or Definitional Item have been made. This does not mean that allocations for other resource types cannot be made but that the community has so far not found pressing use for resources other than Dataset or Definitional Item. The Top-Level Register guidance here is retained without afferming its expected use: it is a technical possibility with international precedence for use (see [[CAB-2010](#ref-CAB-2010)]) and the AGLDWG may, or may not, choose to allow Top-Level Register registration in the future._
 
-### 7.1. <a id="Datasets"></a>Datasets
+### 8.1. <a id="Datasets"></a>Datasets
 Dataset can have IRIs that identify the dataset as a whole. These IRIs are somewhat analogous to the IRIs used to indicate datasets in the [data.gov.au](https://data.gov.au) catalogue (e.g. <https://data.gov.au/dataset/rottnest-ferries-underway-temperature> indicating the "Rottnest Ferries Underway Temperature" dataset) but they have more requirements placed on them in order to perform more functions, specifically Linked Data functions. The main such function concerns dataset-specific namespaces: where IRIs for datasets in `data.gov.au` resolve to a landing page about the dataset and give access to its metadata and links to distributions of it, `linked.data.gov.au` dataset IRIs both link to metadata and also act as a top-level register for items within the dataset. This allows, `linked.data.gov.au` dataset IRIs to be used as dataset-specific namespace domains which can be used to create unique IRIs for sub-dataset items. For example, a Linked Data version of the "Rottnest Ferries Underway Temperature" dataset could have a IRI for each temperature observation which, if delivered at `linked.data.gov.au`, could be something like `https://linked.data.gov.au/dataset/rot-ferry/observation/0026` for an *observation* identified by *0026*. The particular pattern used within `https://linked.data.gov.au/dataset/rot-ferry...` is up to the dataset IRI submitter to determine.
 
 Dataset producers are free to choose the form that their sub-dataset item IRIs take (so-called *hash* or *slash* IRIs (see [[W3C-2016](#ref-W3C-2016)]) however they must deliver both the top-level register of their dataset and all visible subcomponents of it according to Linked Data principles.
@@ -209,7 +221,7 @@ Requirement | Description | Conformance
 
 The tests for what constitutes a valid Linked Data dataset are articulated in [Appendix A](#app-a).
 
-#### 7.1.1. Dataset PID IRI pattern
+#### 8.1.1. Dataset PID IRI pattern
 The pattern for Dataset PIDs is:
 
 ```
@@ -242,7 +254,7 @@ Where the "gnaf" dataset, using slash IRIs for Address subelement "GA1234" could
 
 `https://linked.data.gov.au/dataset/gnaf/address/GA1234`
 
-#### 7.1.2. Registration Process
+#### 8.1.2. Registration Process
 This process follows the general process as outlined in Figure 1.
 
 * *Submitter* must be eligible, as per Req 6
@@ -269,16 +281,16 @@ Requirement | Description | Conformance
 <a id="req-6"></a>[Req 6] | For a particular PID IRI to be allocated, the request for that allocation must be the first request for it that is found eligible | ***MUST***
 
 
-### 7.1.3. Required Metadata
+### 8.1.3. Required Metadata
 Metadata to be supplied for the registration of a Linked Data dataset, and thus the allocation of a IRI for it, must constitute a valid record for a dataset within the AGLDWG Linked Data PID Register. Record validity is determined using the process outlined in [Appendix B](#app-b).
 
 Entries in the AGLDWG Linked Data PID Register are public from submission onwards.
 
 
-### 7.2. <a id="Definitional"></a>Definitional Resources
+### 8.2. <a id="Definitional"></a>Definitional Resources
 Definitional Resources are Linked Data vocabularies, vocabulary terms, ontologies, ontology terms and potentially other, Linked Data, data model items. Currently, as per Datasets, IRI patterning is provided by the AGLDWG at the whole-of-resource level (i.e. whole ontology or whole vocabulary) with IRIs for subcomponents such as vocabulary terms or ontology class definitions to be implemented by the definitional resource managers, at their discretion.
 
-#### 7.2.1. Definitional resource PID IRI pattern
+#### 8.2.1. Definitional resource PID IRI pattern
 The pattern for Definitional PIDs is:
 
 ```
@@ -319,7 +331,7 @@ or, if the `StreetType` codes were modularised within the ontology perhaps:
 
 `https://linked.data.gov.au/def/gnaf/code/StreetTypes/Avenue`
 
-#### 7.2.2. Registration Process
+#### 8.2.2. Registration Process
 This process follows the general process as outlined in Figure 1.
 
 * *Submitter* must be eligible, as per Req 6
@@ -341,13 +353,13 @@ This process follows the general process as outlined in Figure 1.
   * *Submitter* notified
 * *Submitting Organization* is free to use allocated IRIs
 
-#### 7.2.3. Required Metadata
+#### 8.2.3. Required Metadata
 Metadata to be supplied for the registration of a Linked Data definitional resource, and thus the allocation of an IRI for it, must constitute a valid record for such within the AGLDWG Linked Data PID Register. Record validity is determined using the process outlined in [Appendix B](#app-b).
 
 Entries in the AGLDWG Linked Data PID Register are public from submission onwards.
 
 
-### 7.3. <a id="TopLevelRegisters"></a>Top-Level Register IRIs
+### 8.3. <a id="TopLevelRegisters"></a>Top-Level Register IRIs
 Top-Level Registers are an index of individual Linked Data objects, promoted to the 'top' of `linked.data.gov.au` for high visibility. Such registers are formulated using very basic information:
 
 * the identity of the register itself (given via its IRI)
@@ -374,10 +386,10 @@ A multi-class example:
 
 A *Submitting Organization* wishes a top-level register for items of class A and class B. There is some real-world logic making such an allocation sensible so the *Submitting Organization* requests the top-level register `linked.data.gov.au/classAB/` which is approved. A better request though would be for a register of `linked.data.gov.au/classC/` where class C is a superclass of both class A and B.
 
-##### 7.3.0.1. Use and non-use of Register IRI for contained items
+##### 8.3.0.1. Use and non-use of Register IRI for contained items
 A *Submitting Organization* may request a top-level register such as `linked.data.gov.au/classA/` and then present items within that class with IRIs such as `linked.data.gov.au/classA/1`, `linked.data.gov.au/classA/2` etc. but may also present items with un-related IRIs within the register as long as the class of item (discoverable via de-referenceable RDF) accords with the class(es) for which the register was allocated. The AGLDWG may check the classes of items within a top-level register using automated means.
 
-##### 7.3.0.2. Subregisters
+##### 8.3.0.2. Subregisters
 If a *Submitting Organization* wishes to use a top-level register already allocated for new items in accordance with the class(es) for with the register was allocated, they have two options:
 
 1. arrange with the original *Submitting Organization* to have their items included in the register
@@ -385,7 +397,7 @@ If a *Submitting Organization* wishes to use a top-level register already alloca
 
 Modules requested within a top-level register will be presented as sub-registers of the Top-Level Register. Management of such is the responsibility of the Top-Level Register's manager - the original *Submitting Organisation* who was allocated the IRI for it, not the AGLDWG.
 
-#### 7.3.1. Top-Level Register IRI pattern
+#### 8.3.1. Top-Level Register IRI pattern
 The pattern for allocating Top-Level Register IRIs is:
 
 ```
@@ -414,7 +426,7 @@ modularised-register-IRI = register-IRI "/" module-id
 module-id = *(ALPHA / DIGIT / "-")
 ```
 
-#### 7.3.2. Registration Process
+#### 8.3.2. Registration Process
 This process follows the general process as outlined in Figure 1.
 
 * *Submitter* must be eligible, as per Req 6
@@ -434,13 +446,13 @@ This process follows the general process as outlined in Figure 1.
   * *Submitter* notified
 * *Submitting Organization* is free to use allocated IRIs
 
-#### 7.3.3. Required Metadata
+#### 8.3.3. Required Metadata
 Metadata to be supplied for the registration of a Linked Data top-level register, and thus the allocation of a IRI for it, must constitute a valid record for such within the AGLDWG Linked Data PID Register. Record validity is determined using the process outlined in [Appendix B](#app-b).
 
 Entries in the AGLDWG Linked Data PID Register are public from submission onwards.
 
 
-### 7.4. <a id="SecondLevelRegisters"></a>Second-Level Register IRIs
+### 8.4. <a id="SecondLevelRegisters"></a>Second-Level Register IRIs
 At this stage, the AGLDWG recognises there are two sorts of Second-level Registers for which IRIs may be allocated:
 
 1. subregisters of a Dataset
@@ -448,7 +460,7 @@ At this stage, the AGLDWG recognises there are two sorts of Second-level Registe
 
 In both cases, the IRI arrangements for the Second-Level Register IRIs need to be made by the dataset or Top-Level Register manager, however the AGLDWG can assist with implementing redirects for these subregisters within the patterning assigned to a Dataset or Top-Level Register, if requested. Such pattern implementation will follow the workflow given in Figure 3 but will not result in any change to the relevant allocation status of the Dataset or Top-Level Register.
 
-## 8. <a id="References"></a>References
+## 9. <a id="References"></a>References
 [AGLDWG-2018] <a name="ref-AGLDWG-2018"></a>Australian Government Linked Data Working Group "Governance", web page, 2018. <https://www.linked.data.gov.au/governance>, accessed 2018-07-27.
 
 [AGLDWG-2018b] <a name="ref-AGLDWG-2018b"></a>Australian Government Linked Data Working Group, "Status Vocabulary". SKOS Vocabulary, 22 July 2018. <http://test.linked.data.gov.au/def/status>, accessed 2018-07-22.
@@ -499,10 +511,10 @@ In both cases, the IRI arrangements for the Second-Level Register IRIs need to b
 
 [W3C-2018] <a name="ref-W3C-2018"></a> World Wide Web Consortium, "Linked Data", web page, 2018. <https://www.w3.org/standards/semanticweb/data>, accessed 2018-07-27.
 
-## 9. <a id="app-a"></a>Appendix A: Resource Linked Data requirements
+## <a id="app-a"></a>Appendix A: Resource Linked Data requirements
 Resources for which the AGLDWG issues PIDs must be valid Linked Data. Specific requirements for each type of resource are listed below.
 
-#### Datasets:
+### A.1. Datasets
 1. ***MUST*** present a landing page for the dataset in RDF
   * the RDF must pass basic RDF syntactic validation
   * the issued PID IRI must be able to resolve to at least one standard serialisation of RDF which the AGLDWG takes to be either RDF/XML, Turtle, JSON-LD, N-triples or TriG using standard HTTP content negotiation which, for AGLDWG-hosted resources, will be implemented automatically  
@@ -535,7 +547,7 @@ Requirement | Function name | Purpose
 5 | `dataset_optional_5` | resolves the access IRI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking HTML & RDF formats, seeks basic metadata elements such as Dublin Core Terms
 
 
-#### Definitional resources:
+### A.2 Definitional resources
 1. ***MUST*** be presented in the Resource Description Framework, RDF [[W3C-2014](#ref-W3C-2014)]
   * the RDF must pass basic RDF syntactic validation
   * the issued PID IRI must be able to resolve to at least one standard serialisation of RDF which the AGLDWG takes to be either RDF/XML, Turtle, JSON-LD, N-triples, N-quads or TriG using standard HTTP content negotiation which, for AGLDWG-hosted resources, will be implemented automatically  
@@ -566,7 +578,7 @@ Requirement | Function name | Purpose
 5 | `dataset_optional_5` | resolves the access IRI of the resource, looks for an HTTP 200 response to a request using an `Accept` header seeking HTML & RDF formats, seeks basic metadata elements such as Dublin Core Terms
 
 
-## 10. <a id="app-b"></a>Appendix B: Resource register item metadata
+## 11. <a id="app-b"></a>Appendix B: Resource register item metadata
 Resources submitted to the AGLDWG for IRI allocation are considered items submitted to a registry and are required to have metadata supplied according to the Registry Ontology [[REY-2012](#ref-REY-2012)]. This enables resource management, cataloguing and delivery of registry information as Linked Data. Entries in the AGLDWG Linked Data PID Register ([catalogue.linked.data.gov.au](http://catalogue.linked.data.gov.au)), which are required for PID IRI allocation, can only be saved when valid metadata is entered. Entry metadata is also changed as the PID request that the record represents passes through an approval workflow. The register uses simple labels in its forms to indicate elements and a mapping for each label and the equivalent formal predicates in Registry Ontology, and their required cardinality, are given in Table 2.
 
 **Table 2**: AGLDWG Linked Data PID Register metadata elements for register items, their Registry Ontology equivalents, cardinalities and notes. The Registry Ontology element prefixes are:
