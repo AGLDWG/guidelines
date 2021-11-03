@@ -16,7 +16,7 @@ This document describes how the Australian Government Linked Data Working Group 
 4. [Conformance](#4-conformance)
 5. [Introduction](#5-introduction)
 6. [Persistent domain](#6-persistent-domain)
-7. [IRI Registration](#7-PIDIRIRegistration)
+7. [IRI Registration](#7-pid-registration)
 8. [Resource Types](#8-resource-types)  
     8.1. [Datasets](#81-datasets)  
     8.2. [Definitional Resources](#82-definitional-resources)  
