@@ -11,18 +11,18 @@ This document describes how the Australian Government Linked Data Working Group 
 
 ## 2. Table of Contents
 1. [Preface](#1-Preface)
-2. [Table of Contents](#2-TableOfContents)
-3. [Changelog](#3-Changelog)
-4. [Conformance](#4-Conformance)
-5. [Introduction](#5-Introduction)
-6. [Persistent domain](#6-PersistentDomain)
+2. [Table of Contents](#2-table-of-contents)
+3. [Changelog](#3-changelog)
+4. [Conformance](#4-conformance)
+5. [Introduction](#5-introduction)
+6. [Persistent domain](#6-persistent-domain)
 7. [IRI Registration](#7-PIDIRIRegistration)
-8. [Resource Types](#8-ResourceTypes)  
-    8.1. [Datasets](#81-Datasets)  
-    8.2. [Definitional Resources](#82-DefinitionalResources)  
-    8.3. [Top-Level Registers](#83-TopLevelRegisters)  
-    8.4. [Second-Level Registers](#84-SecondLevelRegisters)  
-9. [References](#9-References)
+8. [Resource Types](#8-resource-types)  
+    8.1. [Datasets](#81-datasets)  
+    8.2. [Definitional Resources](#82-definitional-resources)  
+    8.3. [Top-Level Registers](#83-top-level-registers)  
+    8.4. [Second-Level Registers](#84-second-level-egisters)  
+9. [References](#9-references)
 10. [Appendix A: Resource Linked Data requirements](#appendix-a-resource-linked-data-requirements)
 11. [Appendix B: Resource register resource metadata](#appendix-b-resource-register-item-metadatab)
 
@@ -219,7 +219,7 @@ Requirement | Description | Conformance
 ---|---|---
 <a id="req-5"></a>[Req 5] | Resources identified using PIDs must contain Linked Data and must pass the conformance tests specified for that resource type | ***MUST***
 
-The tests for what constitutes a valid Linked Data dataset are articulated in [Appendix A](#app-a).
+The tests for what constitutes a valid Linked Data dataset are articulated in [Appendix A](#appendix-a-resource-linked-data-requirements).
 
 #### 8.1.1. Dataset PID IRI pattern
 The pattern for Dataset PIDs is:
@@ -262,7 +262,7 @@ This process follows the general process as outlined in Figure 1.
   * the resource type must be set to 'dataset'
   * request approval status to `submitted`
 * *Controlling Committee* is automatically notified to review the request by the register
-* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a dataset described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
+* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a dataset described in [Appendix B](#appendix-b-resource-register-item-metadata) and [Appendix A](#appendix-a-resource-linked-data-requirements), respectively
   * if approved, request approval status to `approved`
   * if not approved, resource status set to `not approved`
   * *Submitter* automatically notified of status change
@@ -282,7 +282,7 @@ Requirement | Description | Conformance
 
 
 ### 8.1.3. Required Metadata
-Metadata to be supplied for the registration of a Linked Data dataset, and thus the allocation of a IRI for it, must constitute a valid record for a dataset within the AGLDWG Linked Data PID Register. Record validity is determined using the process outlined in [Appendix B](#app-b).
+Metadata to be supplied for the registration of a Linked Data dataset, and thus the allocation of a IRI for it, must constitute a valid record for a dataset within the AGLDWG Linked Data PID Register. Record validity is determined using the process outlined in [Appendix B](#appendix-b-resource-register-item-metadata).
 
 Entries in the AGLDWG Linked Data PID Register are public from submission onwards.
 
@@ -341,7 +341,7 @@ This process follows the general process as outlined in Figure 1.
     * **NOTE**: the AGLDWG's system to request IRIs might require that a definitional resouce subtype - _vocabulary_, _ontology_ etc. be selected
   * request approval status to `submitted`
 * *Controlling Committee* is automatically notified to review the request by the register
-* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a definitional resource described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
+* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a definitional resource described in [Appendix B](#appendix-b-resource-register-item-metadata) and [Appendix A](#appendix-a-resource-linked-data-requirements), respectively
   * if approved, request approval status to `approved`
   * if not approved, resource status set to `not approved`
   * *Submitter* automatically notified of status change
@@ -354,12 +354,12 @@ This process follows the general process as outlined in Figure 1.
 * *Submitting Organization* is free to use allocated IRIs
 
 #### 8.2.3. Required Metadata
-Metadata to be supplied for the registration of a Linked Data definitional resource, and thus the allocation of an IRI for it, must constitute a valid record for such within the AGLDWG Linked Data PID Register. Record validity is determined using the process outlined in [Appendix B](#app-b).
+Metadata to be supplied for the registration of a Linked Data definitional resource, and thus the allocation of an IRI for it, must constitute a valid record for such within the AGLDWG Linked Data PID Register. Record validity is determined using the process outlined in [Appendix B](#appendix-b-resource-register-item-metadata).
 
 Entries in the AGLDWG Linked Data PID Register are public from submission onwards.
 
 
-### 8.3. Top-Level Register IRIs
+### 8.3. Top-Level Registers
 Top-Level Registers are an index of individual Linked Data objects, promoted to the 'top' of `linked.data.gov.au` for high visibility. Such registers are formulated using very basic information:
 
 * the identity of the register itself (given via its IRI)
@@ -434,7 +434,7 @@ This process follows the general process as outlined in Figure 1.
   * the resource type must be set to 'top-level register'
   * request approval status to `submitted`
 * *Controlling Committee* is automatically notified to review the request by the register
-* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a top-level register described in [Appendix B](#app-b) and [Appendix A](#app-a), respectively
+* *Controlling Committee* reviews the request and approves it if it passes the metadata and Linked Data tests for a top-level register described in [Appendix B](#appendix-b-resource-register-item-metadata) and [Appendix A](#appendix-a-resource-linked-data-requirements), respectively
   * if approved, request approval status to `approved`
   * if not approved, resource status set to `not approved`
   * *Submitter* automatically notified of status change
@@ -447,12 +447,12 @@ This process follows the general process as outlined in Figure 1.
 * *Submitting Organization* is free to use allocated IRIs
 
 #### 8.3.3. Required Metadata
-Metadata to be supplied for the registration of a Linked Data top-level register, and thus the allocation of a IRI for it, must constitute a valid record for such within the AGLDWG Linked Data PID Register. Record validity is determined using the process outlined in [Appendix B](#app-b).
+Metadata to be supplied for the registration of a Linked Data top-level register, and thus the allocation of a IRI for it, must constitute a valid record for such within the AGLDWG Linked Data PID Register. Record validity is determined using the process outlined in [Appendix B](#appendix-b-resource-register-item-metadata).
 
 Entries in the AGLDWG Linked Data PID Register are public from submission onwards.
 
 
-### 8.4. Second-Level Register IRIs
+### 8.4. Second-Level Registers
 At this stage, the AGLDWG recognises there are two sorts of Second-level Registers for which IRIs may be allocated:
 
 1. subregisters of a Dataset
