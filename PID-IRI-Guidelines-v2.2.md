@@ -16,15 +16,15 @@ This document describes how the Australian Government Linked Data Working Group 
 4. [Conformance](#4-conformance)
 5. [Introduction](#5-introduction)
 6. [Persistent domain](#6-persistent-domain)
-7. [IRI Registration](#7-pid-registration)
+7. [PID Registration](#7-pid-registration)
 8. [Resource Types](#8-resource-types)  
     8.1. [Datasets](#81-datasets)  
     8.2. [Definitional Resources](#82-definitional-resources)  
     8.3. [Top-Level Registers](#83-top-level-registers)  
-    8.4. [Second-Level Registers](#84-second-level-egisters)  
+    8.4. [Second-Level Registers](#84-second-level-registers)  
 9. [References](#9-references)
 10. [Appendix A: Resource Linked Data requirements](#appendix-a-resource-linked-data-requirements)
-11. [Appendix B: Resource register resource metadata](#appendix-b-resource-register-item-metadatab)
+11. [Appendix B: Resource register resource metadata](#appendix-b-resource-register-item-metadata)
 
 ## 3. Changelog
 This version of the document contains the following changes to the 2.1 version of the *Guidelines*: 
@@ -194,10 +194,10 @@ Following Figure 2, it can be seen that minimal successful path for a resource f
 ## 8. Resource Types
 Presently the AGLDWG recognises four types of items for which PIDs may be requested:
 
-1. Dataset
-2. Definitional Resource
-3. Top-Level Register
-4. Second-Level Register
+1. [Datasets](#81-datasets)  
+2. [Definitional Resources](#82-definitional-resources)  
+3. [Top-Level Registers](#83-top-level-registers)  
+4. [Second-Level Registers](#84-second-level-registers)  
 
 There is an additional resource type, *Organisation*, for which IRIs are created automatically - to identifier AGLDWG member organisations.
 
