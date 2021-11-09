@@ -16,7 +16,10 @@ This document describes how the Australian Government Linked Data Working Group 
 4. [Conformance](#4-conformance)
 5. [Introduction](#5-introduction)
 6. [Persistent domain](#6-persistent-domain)
-7. [PID Registration](#7-pid-registration)
+7. [PID Registration](#7-pid-registration)  
+    7.1. [Register Roles](#71-register-roles)  
+    7.2. [Register Workflows](#72-register-workflows)  
+    7.3. [Registered Item Statuses](#73-registered-item-status)  
 8. [Resource Types](#8-resource-types)  
     8.1. [Datasets](#81-datasets)  
     8.2. [Definitional Resources](#82-definitional-resources)  
@@ -114,9 +117,27 @@ The AGLDWG requires all allocated PIDs to be registered provides guidance below 
 Registration processes (Section 6.2, 7.2 & 8.2 below) follow those defined in "ISO 19135 Geographic information — Procedures for item registration ISO/DIS 19135-1", [[ISO-2014](#ref-ISO-2014)] with the assignment of resource status of *accepted* (see Section 4.3) being the necessary and sufficient criteria for the technical implementation of an IRI redirection for the PID.
 
 ### 7.1 Registration roles
+
+All of the roles assigned to people and organisations within the context of PID Register use are taken from [[ISO-2014](#ref-ISO-2014)] and a vocabulary of the roles is presented by the AGLDWG online at:
+
+* <https://linked.data.gov.au/def/reg-roles>
+
+The roles from that vocabulary are:
+
+* [Control Body](https://linked.data.gov.au/def/reg-roles/control-body)
+* [Register Owner](https://linked.data.gov.au/def/reg-roles/register-owner)
+* [Register Manager](https://linked.data.gov.au/def/reg-roles/register-manager)
+* [Register User](https://linked.data.gov.au/def/reg-roles/register-user)
+* [Registry Manager](https://linked.data.gov.au/def/reg-roles/registry-manager)
+* [Submitting Organization](https://linked.data.gov.au/def/reg-roles/submitting-organization)
+* [Submitter](https://linked.data.gov.au/def/reg-roles/submitter)
+
 People requesting PIDs are *Submitters*, acting on behalf of an organisation which fullfills the role of a *Submitting Organization*. These organisations are often, but do not have to be, members organisations of the AGLDWG. See [www.linked.data.gov.au/join](https://www.linked.data.gov.au/join) for more information about joining the AGLDWG.
 
-The AGLDWG as a whole plays the role of *Register Owner* with the *Register* being the list of all PIDs requested and allocated for `linked.data.gov.au`. The co-chairs of the AGLDWG play the role of *Register Manager* and perform most register management actions on behalf of the AGLDWG. A *Control Body* consisting of AGLDWG member organisation's representatives conduct reviews of PID requests, as delegated by the co-chairs. The technical management of the register and the associated IRI redirection system is conducted by AGLDWG members in the role of *Registry Manager* at the behest of the *Registery Manager*.
+The AGLDWG as a whole plays the role of *Register Owner* with the *Register* being the list of all PIDs requested and allocated for `linked.data.gov.au`. The co-chairs of the AGLDWG play the role of *Register Manager* and perform most register management actions on behalf of the AGLDWG. A *Control Body* consisting of AGLDWG member organisation's representatives conduct reviews of PID requests, as delegated by the co-chairs. The technical management of the register and the associated IRI redirection system is conducted by AGLDWG members in the role of *Registry Manager* at the behest of the *Register Manager*.
+
+> NOTE:
+> If and when a 3rd party takes on the technical management of the *Register*, that party will become the *Registry Manager*
 
 The AGLDWG sees members of any organisation without roles defined above and members of the general public as playing the role of *Register User*. All AGLDWG registers and register item metadata are freely available in a read-only fashion.
 
@@ -168,18 +189,18 @@ The Item Deprecation Workflow for registered item request processing is describe
 ### 7.3 Registered Item Status
 An item's status within the Register is indicated with a *status*, terms for which are mostly taken from the Registry Ontology's status vocabulary. The original publication of this vocabulary is [[REY-2012](#ref-REY-2012)] and the AGLDWG has republished it at [[AGLDWG-2018b](#ref-AGLDWG-2018)]) to enable better visibility. The status vocabulary term hierarchy is:
 
-* [accepted](https://linked.data.gov.au/def/status/accepted)
-  * [deprecated](https://linked.data.gov.au/def/status/deprecated)
-    * [retired](https://linked.data.gov.au/def/status/retired)
-    * [superseded](https://linked.data.gov.au/def/status/superseded)
-    * [unstable](https://linked.data.gov.au/def/status/unstable)
-  * [valid](https://linked.data.gov.au/def/status/valid)
-    * [experimental](https://linked.data.gov.au/def/status/experimental)
-    * [stable](https://linked.data.gov.au/def/status/stable)
-* [not accepted](https://linked.data.gov.au/def/status/notAccepted)
-  * [invalid](https://linked.data.gov.au/def/status/invalid)
-  * [reserved](https://linked.data.gov.au/def/status/reserved)
-  * [submitted](https://linked.data.gov.au/def/status/submitted)
+* [accepted](https://linked.data.gov.au/def/reg-statuses/accepted)
+  * [deprecated](https://linked.data.gov.au/def/reg-statuses/deprecated)
+    * [retired](https://linked.data.gov.au/def/reg-statuses/retired)
+    * [superseded](https://linked.data.gov.au/def/reg-statuses/superseded)
+    * [unstable](https://linked.data.gov.au/def/reg-statuses/unstable)
+  * [valid](https://linked.data.gov.au/def/reg-statuses/valid)
+    * [experimental](https://linked.data.gov.au/def/reg-statuses/experimental)
+    * [stable](https://linked.data.gov.au/def/reg-statuses/stable)
+* [not accepted](https://linked.data.gov.au/def/reg-statuses/notAccepted)
+  * [invalid](https://linked.data.gov.au/def/reg-statuses/invalid)
+  * [reserved](https://linked.data.gov.au/def/reg-statuses/reserved)
+  * [submitted](https://linked.data.gov.au/def/reg-statuses/submitted)
 
  A state diagram of resources' statuses is given in Figure 2 below.
 
