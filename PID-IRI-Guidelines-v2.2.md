@@ -19,7 +19,7 @@ This document describes how the Australian Government Linked Data Working Group 
 7. [PID Registration](#7-pid-registration)  
     7.1. [Register Roles](#71-register-roles)  
     7.2. [Register Workflows](#72-register-workflows)  
-    7.3. [Registered Item Statuses](#73-registered-item-status)  
+    7.3. [Register Item Statuses](#73-register-item-status)  
 8. [Resource Types](#8-resource-types)  
     8.1. [Datasets](#81-datasets)  
     8.2. [Definitional Resources](#82-definitional-resources)  
@@ -116,7 +116,7 @@ The AGLDWG requires all allocated PIDs to be registered provides guidance below 
 
 Registration processes (Section 6.2, 7.2 & 8.2 below) follow those defined in "ISO 19135 Geographic information — Procedures for item registration ISO/DIS 19135-1", [[ISO-2014](#ref-ISO-2014)] with the assignment of resource status of *accepted* (see Section 4.3) being the necessary and sufficient criteria for the technical implementation of an IRI redirection for the PID.
 
-### 7.1 Registration roles
+### 7.1 Register Roles
 
 All of the roles assigned to people and organisations within the context of PID Register use are taken from [[ISO-2014](#ref-ISO-2014)] and a vocabulary of the roles is presented by the AGLDWG online at:
 
@@ -154,7 +154,7 @@ Role | Group
 *Submitter* | persons acting on behalf of a *Submitting Organization*
 *Register User* | Everyone not listed above using the Register
 
-### 7.2 Registration workflows
+### 7.2 Register Workflows
 
 The processing of items for which PIDs are requested follow workflows, as do other actions such as to move a Registered Item from *stable* to another state. 
 
@@ -186,7 +186,7 @@ The Item Deprecation Workflow for registered item request processing is describe
     * the PID *submitter* is notified
     * the PID's status is changed to *retired*
 
-### 7.3 Registered Item Status
+### 7.3 Register Item Statuses
 An item's status within the Register is indicated with a *status*, terms for which are mostly taken from the Registry Ontology's status vocabulary. The original publication of this vocabulary is [[REY-2012](#ref-REY-2012)] and the AGLDWG has republished it at [[AGLDWG-2018b](#ref-AGLDWG-2018)]) to enable better visibility. The status vocabulary term hierarchy is:
 
 * [accepted](https://linked.data.gov.au/def/reg-statuses/accepted)
