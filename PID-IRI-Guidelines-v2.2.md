@@ -19,7 +19,7 @@ This document describes how the Australian Government Linked Data Working Group 
 7. [PID Registration](#7-pid-registration)  
     7.1. [Register Roles](#71-register-roles)  
     7.2. [Register Workflows](#72-register-workflows)  
-    7.3. [Register Item Statuses](#73-register-item-status)  
+    7.3. [Register Item Statuses](#73-register-item-statuses)  
 8. [Resource Types](#8-resource-types)  
     8.1. [Datasets](#81-datasets)  
     8.2. [Definitional Resources](#82-definitional-resources)  
