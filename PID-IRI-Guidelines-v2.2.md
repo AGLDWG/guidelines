@@ -189,18 +189,18 @@ The Item Deprecation Workflow for registered item request processing is describe
 ### 7.3 Register Item Statuses
 An item's status within the Register is indicated with a *status*, terms for which are mostly taken from the Registry Ontology's status vocabulary. The original publication of this vocabulary is [[REY-2012](#ref-REY-2012)] and the AGLDWG has republished it at [[AGLDWG-2018b](#ref-AGLDWG-2018)]) to enable better visibility. The status vocabulary term hierarchy is:
 
-* [accepted](https://linked.data.gov.au/def/reg-statuses/accepted)
-  * [deprecated](https://linked.data.gov.au/def/reg-statuses/deprecated)
-    * [retired](https://linked.data.gov.au/def/reg-statuses/retired)
-    * [superseded](https://linked.data.gov.au/def/reg-statuses/superseded)
-    * [unstable](https://linked.data.gov.au/def/reg-statuses/unstable)
-  * [valid](https://linked.data.gov.au/def/reg-statuses/valid)
-    * [experimental](https://linked.data.gov.au/def/reg-statuses/experimental)
-    * [stable](https://linked.data.gov.au/def/reg-statuses/stable)
-* [not accepted](https://linked.data.gov.au/def/reg-statuses/notAccepted)
-  * [invalid](https://linked.data.gov.au/def/reg-statuses/invalid)
-  * [reserved](https://linked.data.gov.au/def/reg-statuses/reserved)
-  * [submitted](https://linked.data.gov.au/def/reg-statuses/submitted)
+* [Accepted](https://linked.data.gov.au/def/reg-statuses/accepted)
+  * [Deprecated](https://linked.data.gov.au/def/reg-statuses/deprecated)
+    * [Retired](https://linked.data.gov.au/def/reg-statuses/retired)
+    * [Superseded](https://linked.data.gov.au/def/reg-statuses/superseded)
+    * [Unstable](https://linked.data.gov.au/def/reg-statuses/unstable)
+  * [Valid](https://linked.data.gov.au/def/reg-statuses/valid)
+    * [Experimental](https://linked.data.gov.au/def/reg-statuses/experimental)
+    * [Stable](https://linked.data.gov.au/def/reg-statuses/stable)
+* [Not Accepted](https://linked.data.gov.au/def/reg-statuses/notAccepted)
+  * [Invalid](https://linked.data.gov.au/def/reg-statuses/invalid)
+  * [Reserved](https://linked.data.gov.au/def/reg-statuses/reserved)
+  * [Submitted](https://linked.data.gov.au/def/reg-statuses/submitted)
 
  A state diagram of resources' statuses is given in Figure 2 below.
 
@@ -209,7 +209,7 @@ An item's status within the Register is indicated with a *status*, terms for whi
 
 Following Figure 2, it can be seen that minimal successful path for a resource from first PID IRI request to operational implementation is:
 
-`submitted -> accepted -> stable`
+`Submitted -> Accepted -> Stable`
 
 
 ## 8. Resource Types
