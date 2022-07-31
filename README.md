@@ -2,7 +2,8 @@
 This repository contains guidelines issued by the [Australian Government Linked Data Working Group (AGLDWG)](http://www.linked.data.gov.au) for the use of persistent identifiers (PIDs) for Linked Data resources.
 
 ## Guideline versions
-* **[Version 2.0](PID-URI-Guidelines-v2.0.md)** - issued in August, 2018. ***Current***
+* **[Version 2.1](PID-URI-Guidelines-v2.0.md)** - issued in December, 2020. ***Current***
+* **[Version 2.0](PID-URI-Guidelines-v2.0.md)** - issued in August, 2018. *Superseded*
 * **[Version 0.3](PID-URI-Guidelines-v0.3.md)** - issued in March, 2018. *Superseded*
 * **[Version 0.2](PID-URI-Guidelines-v0.2.md)** - issued in September, 2016. *Superseded*
 * **[Version 0.1](PID-URI-Guidelines-v0.1.md)** - issued in July, 2014. *Superseded*
