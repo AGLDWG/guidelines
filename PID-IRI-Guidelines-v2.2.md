@@ -3,7 +3,7 @@
 # IRI Guidelines v2.2
 #### October 18 2021
 ##### Authored by AGLDWG co-chair Nicholas Car\* and edited by members of the AGLDWG\*\*.
-\* <nicholas.car@surroundaustralia.com>  
+\* <nicholas.car@anu.edu.au>  
 ** [www.linked.data.gov.au/contact](https://www.linked.data.gov.au/contact)
 
 ## 1. Preface
