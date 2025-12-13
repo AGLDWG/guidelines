@@ -486,7 +486,7 @@ In both cases, the IRI arrangements for the Second-Level Register PIDs need to b
 
 [AGLDWG-2018b] <a name="ref-AGLDWG-2018b"></a>Australian Government Linked Data Working Group, "Status Vocabulary". SKOS Vocabulary, 22 July 2018. <http://test.linked.data.gov.au/def/status>, accessed 2018-07-22.
 
-[CAB-2010] <a name="ref-CAB-2010"></a>Cabinet Office, "Designing IRI Sets for the UK Public Sector", web page, 2010. <https://www.gov.uk/government/publications/designing-IRI-sets-for-the-uk-public-sector>, accessed 2018-06-07.  
+[CAB-2010] <a name="ref-CAB-2010"></a>Cabinet Office, "Designing URI Sets for the UK Public Sector", web page, 2010. <https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector >, accessed 2025-12-14.  
 
 [CAR-2017] <a href="ref-CAR-2017"></a>Car, Nick; Golodoniuc, Pavel; Klump, Jens. "The challenge of ensuring persistency of identifier systems in the world of ever-changing technology". Data Science Journal. 2017; 16: Article 13. <https://doi.org/10.5334/dsj-2017-013>
 
