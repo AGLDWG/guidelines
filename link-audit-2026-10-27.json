@@ -1,0 +1,704 @@
+{
+  "date": "2026-10-27",
+  "file": "PID-IRI-Guidelines-v2.2.md",
+  "external": [
+    {
+      "url": "https://www.linked.data.gov.au",
+      "lines": [
+        1
+      ],
+      "status": 200,
+      "final_url": "https://www.linked.data.gov.au",
+      "title": "AGLDWG",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://www.linked.data.gov.au/contact",
+      "lines": [
+        7
+      ],
+      "status": 200,
+      "final_url": "https://www.linked.data.gov.au/contact",
+      "title": "AGLDWG",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://github.com/AGLDWG/guidelines",
+      "lines": [
+        42
+      ],
+      "status": 200,
+      "final_url": "https://github.com/AGLDWG/guidelines",
+      "title": "GitHub - AGLDWG/guidelines \u00b7 GitHub",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://www.linked.data.gov.au/governance",
+      "lines": [
+        46,
+        487
+      ],
+      "status": 200,
+      "final_url": "https://www.linked.data.gov.au/governance",
+      "title": "AGLDWG",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://catalogue.linked.data.gov.au",
+      "lines": [
+        96
+      ],
+      "status": 200,
+      "final_url": "https://catalogue.linked.data.gov.au",
+      "title": "Linked Data PID Register | AGLDWG Catalogue",
+      "content_type": "text/html; charset=UTF-8",
+      "soft_error": false
+    },
+    {
+      "url": "http://catalogue.linked.data.gov.au",
+      "lines": [
+        104,
+        607
+      ],
+      "status": 200,
+      "final_url": "https://catalogue.linked.data.gov.au/",
+      "title": "Linked Data PID Register | AGLDWG Catalogue",
+      "content_type": "text/html; charset=UTF-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://data.gov.au",
+      "lines": [
+        115,
+        237
+      ],
+      "status": 200,
+      "final_url": "https://data.gov.au",
+      "title": "Data.gov.au",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "http://purl.org",
+      "lines": [
+        115
+      ],
+      "status": 200,
+      "final_url": "https://purl.archive.org/",
+      "title": "PURL Administration",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://w3id.org/",
+      "lines": [
+        115
+      ],
+      "status": 200,
+      "final_url": "https://w3id.org/",
+      "title": "w3id.org - Permanent Identifiers for the Web",
+      "content_type": "text/html",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-roles",
+      "lines": [
+        125
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-roles/",
+      "title": "Vocabulary",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-roles/control-body",
+      "lines": [
+        129
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-roles/control-body",
+      "title": "Control Body",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-roles/register-owner",
+      "lines": [
+        130
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-roles/register-owner",
+      "title": "Register Owner",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-roles/register-manager",
+      "lines": [
+        131
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-roles/register-manager",
+      "title": "Register Manager",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-roles/register-user",
+      "lines": [
+        132
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-roles/register-user",
+      "title": "Register User",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-roles/registry-manager",
+      "lines": [
+        133
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-roles/registry-manager",
+      "title": "Registry Manager",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-roles/submitting-organization",
+      "lines": [
+        134
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-roles/submitting-organization",
+      "title": "Submitting Organization",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-roles/submitter",
+      "lines": [
+        135
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-roles/submitter",
+      "title": "Submitter",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://www.linked.data.gov.au/join",
+      "lines": [
+        137
+      ],
+      "status": 200,
+      "final_url": "https://www.linked.data.gov.au/join",
+      "title": "AGLDWG",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/accepted",
+      "lines": [
+        194
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/accepted",
+      "title": "Accepted",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/deprecated",
+      "lines": [
+        195
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/deprecated",
+      "title": "Deprecated",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/retired",
+      "lines": [
+        196
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/retired",
+      "title": "Retired",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/superseded",
+      "lines": [
+        197
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/superseded",
+      "title": "Superseded",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/unstable",
+      "lines": [
+        198
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/unstable",
+      "title": "Unstable",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/valid",
+      "lines": [
+        199
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/valid",
+      "title": "Valid",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/experimental",
+      "lines": [
+        200
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/experimental",
+      "title": "Experimental",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/stable",
+      "lines": [
+        201
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/stable",
+      "title": "Stable",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/notAccepted",
+      "lines": [
+        202
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/notAccepted",
+      "title": "Not Accepted",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/invalid",
+      "lines": [
+        203
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/invalid",
+      "title": "Invalid",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/reserved",
+      "lines": [
+        204
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/reserved",
+      "title": "Reserved",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://linked.data.gov.au/def/reg-statuses/submitted",
+      "lines": [
+        205
+      ],
+      "status": 200,
+      "final_url": "https://agldwg.github.io/reg-statuses/submitted",
+      "title": "Submitted",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://data.gov.au/dataset/rottnest-ferries-underway-temperature",
+      "lines": [
+        237
+      ],
+      "status": 404,
+      "final_url": "https://data.gov.au/dataset/rottnest-ferries-underway-temperature",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "http://test.linked.data.gov.au/def/status",
+      "lines": [
+        489
+      ],
+      "status": null,
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "https_retry": {
+        "status": null,
+        "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+      }
+    },
+    {
+      "url": "https://www.gov.uk/government/publications/designing-IRI-sets-for-the-uk-public-sector",
+      "lines": [
+        491
+      ],
+      "status": 404,
+      "final_url": "https://www.gov.uk/government/publications/designing-IRI-sets-for-the-uk-public-sector",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://doi.org/10.5334/dsj-2017-013",
+      "lines": [
+        493
+      ],
+      "status": 200,
+      "final_url": "https://datascience.codata.org/articles/10.5334/dsj-2017-013",
+      "title": "The Challenge of Ensuring Persistency of Identifier Systems in the World of Ever-Changing Technology | Data Science Journal",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "http://www.dublincore.org/documents/dcmi-terms/",
+      "lines": [
+        496
+      ],
+      "status": 200,
+      "final_url": "https://www.dublincore.org/documents/dcmi-terms/",
+      "title": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "http://tools.ietf.org/html/rfc6570",
+      "lines": [
+        499
+      ],
+      "status": 200,
+      "final_url": "https://www.rfc-editor.org/info/rfc6570/",
+      "title": "RFC 6570: URI Template | RFC Editor",
+      "content_type": "text/html;charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "http://www.ietf.org/rfc/rfc2616",
+      "lines": [
+        502
+      ],
+      "status": 200,
+      "final_url": "https://www.rfc-editor.org/info/rfc2616/",
+      "title": "RFC 2616: Hypertext Transfer Protocol -- HTTP&#x2F;1.1 | RFC Editor",
+      "content_type": "text/html;charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "http://www.ietf.org/rfc/rfc2119",
+      "lines": [
+        504
+      ],
+      "status": 200,
+      "final_url": "https://www.rfc-editor.org/info/rfc2119/",
+      "title": "RFC 2119: Key words for use in RFCs to Indicate Requirement Levels | RFC Editor",
+      "content_type": "text/html;charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://tools.ietf.org/html/std68",
+      "lines": [
+        506
+      ],
+      "status": 200,
+      "final_url": "https://www.rfc-editor.org/info/std68/",
+      "title": "STD 68 subseries contains 1 RFC | RFC Editor",
+      "content_type": "text/html;charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://www.iso.org/standard/54721.html",
+      "lines": [
+        508
+      ],
+      "status": 200,
+      "final_url": "https://www.iso.org/standard/54721.html",
+      "title": "ISO 19135-1:2015 - Geographic information \u2014 Procedures for item registration \u2014 Part 1: Fundamentals",
+      "content_type": "text/html;charset=UTF-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://www.iso.org/standard/87753.html",
+      "lines": [
+        510
+      ],
+      "status": 403,
+      "final_url": "https://www.iso.org/standard/87753.html",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "url": "http://metadata-standards.org/11179/",
+      "lines": [
+        512
+      ],
+      "status": 404,
+      "final_url": "https://www.metadata-standards.org/11179/",
+      "error": "HTTP Error 404: Not Found",
+      "https_retry": {
+        "status": 404,
+        "final_url": "https://www.metadata-standards.org/11179/",
+        "error": "HTTP Error 404: Not Found"
+      }
+    },
+    {
+      "url": "http://lists.w3.org/Archives/Public/www-tag/2005Jun/0039.html",
+      "lines": [
+        515
+      ],
+      "status": 200,
+      "final_url": "https://lists.w3.org/Archives/Public/www-tag/2005Jun/0039.html",
+      "title": "[httpRange-14] Resolved from Roy T. Fielding on 2005-06-19 (www-tag@w3.org from June 2005)",
+      "content_type": "text/html",
+      "soft_error": false
+    },
+    {
+      "url": "http://www.pc.gov.au/inquiries/completed/data-access",
+      "lines": [
+        517
+      ],
+      "status": 200,
+      "final_url": "https://www.pc.gov.au/inquiries-and-research/data-access/",
+      "title": "Data Availability and Use - Public inquiry | Productivity Commission",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "http://epimorphics.com/public/vocabulary/Registry.html",
+      "lines": [
+        519
+      ],
+      "status": 200,
+      "final_url": "http://epimorphics.com/public/vocabulary/Registry.html",
+      "title": "Registry ontology",
+      "content_type": "text/html",
+      "soft_error": false
+    },
+    {
+      "url": "http://www.w3.org/DesignIssues/LinkedData.html",
+      "lines": [
+        521
+      ],
+      "status": 200,
+      "final_url": "https://www.w3.org/DesignIssues/LinkedData.html",
+      "title": "Linked Data - Design Issues",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "http://www.w3.org/TR/coolIRIs/",
+      "lines": [
+        523
+      ],
+      "status": 404,
+      "final_url": "https://www.w3.org/TR/coolIRIs/",
+      "error": "HTTP Error 404: Not Found",
+      "https_retry": {
+        "status": 404,
+        "final_url": "https://www.w3.org/TR/coolIRIs/",
+        "error": "HTTP Error 404: Not Found"
+      }
+    },
+    {
+      "url": "http://www.w3.org/2011/gld/wiki/223_Best_Practices_IRI_Construction",
+      "lines": [
+        525
+      ],
+      "status": 404,
+      "final_url": "https://www.w3.org/2011/gld/wiki/223_Best_Practices_IRI_Construction",
+      "error": "HTTP Error 404: Not Found",
+      "https_retry": {
+        "status": 404,
+        "final_url": "https://www.w3.org/2011/gld/wiki/223_Best_Practices_IRI_Construction",
+        "error": "HTTP Error 404: Not Found"
+      }
+    },
+    {
+      "url": "http://www.w3.org/TR/rdf11-concepts/",
+      "lines": [
+        527
+      ],
+      "status": 200,
+      "final_url": "https://www.w3.org/TR/rdf11-concepts/",
+      "title": "RDF 1.1 Concepts and Abstract Syntax",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "http://www.w3.org/TR/rdf-schema/",
+      "lines": [
+        529
+      ],
+      "status": 200,
+      "final_url": "https://www.w3.org/TR/rdf-schema/",
+      "title": "RDF Schema 1.1",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://www.w3.org/TR/vocab-org/",
+      "lines": [
+        531
+      ],
+      "status": 200,
+      "final_url": "https://www.w3.org/TR/vocab-org/",
+      "title": "The Organization Ontology",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://www.w3.org/wiki/HashVsSlash",
+      "lines": [
+        533
+      ],
+      "status": 200,
+      "final_url": "https://www.w3.org/wiki/HashVsSlash",
+      "title": "HashVsSlash - W3C Wiki",
+      "content_type": "text/html; charset=UTF-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://www.w3.org/TR/html/",
+      "lines": [
+        535
+      ],
+      "status": 200,
+      "final_url": "https://html.spec.whatwg.org/multipage/",
+      "title": "HTML Standard",
+      "content_type": "text/html; charset=utf-8",
+      "soft_error": false
+    },
+    {
+      "url": "https://www.w3.org/standards/semanticweb/data",
+      "lines": [
+        537
+      ],
+      "status": 200,
+      "final_url": "https://www.w3.org/standards/",
+      "title": "Web Standards | W3C",
+      "content_type": "text/html; charset=UTF-8",
+      "soft_error": false
+    },
+    {
+      "url": "http://lode2.linked.data.gov.au",
+      "lines": [
+        583
+      ],
+      "status": null,
+      "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>",
+      "https_retry": {
+        "status": null,
+        "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+      }
+    },
+    {
+      "url": "http://vocabs.ardc.edu.au",
+      "lines": [
+        583
+      ],
+      "status": 200,
+      "final_url": "https://vocabs.ardc.edu.au/",
+      "title": "Research Vocabularies Australia",
+      "content_type": "text/html; charset=UTF-8",
+      "soft_error": false
+    }
+  ],
+  "missing_fragments": [
+    {
+      "fragment": "1-Preface",
+      "line": 13
+    },
+    {
+      "fragment": "ref-AGLDWG-2021",
+      "line": 51
+    },
+    {
+      "fragment": "ref-PC-2017",
+      "line": 58
+    },
+    {
+      "fragment": "ref-CAR2-17",
+      "line": 81
+    },
+    {
+      "fragment": "ref-AGLDWG-2021",
+      "line": 146
+    },
+    {
+      "fragment": "9-second-level-registers",
+      "line": 229
+    },
+    {
+      "fragment": "ref-W3C-2016",
+      "line": 239
+    },
+    {
+      "fragment": "ref-17",
+      "line": 389
+    }
+  ],
+  "relative": [
+    {
+      "target": "workflow-approval.png",
+      "line": 167,
+      "exists": true
+    },
+    {
+      "target": "workflow-approval.png",
+      "line": 167,
+      "exists": true
+    },
+    {
+      "target": "status-states.png",
+      "line": 209,
+      "exists": true
+    },
+    {
+      "target": "status-states.png",
+      "line": 209,
+      "exists": true
+    },
+    {
+      "target": "ref-CAR-2017",
+      "line": 493,
+      "exists": false
+    },
+    {
+      "target": "ref-PC-2017",
+      "line": 517,
+      "exists": false
+    },
+    {
+      "target": "ref-W3C-2016",
+      "line": 533,
+      "exists": false
+    }
+  ],
+  "source_sha256": "253254c3c194930e410fec6fb61342cba82d22fced2aaca5bf4927c98976f4dc",
+  "source_base_commit": "ef6e25864092e847ab28157a7ca7837dd66f7daf",
+  "method": "GET, follow redirects, verify TLS, max 18 seconds per request, eight workers; HTTPS retry for failing HTTP URLs. Read at most 350000 bytes per response. Excludes example IRIs in fenced/inline code; includes rendered Markdown links, autolinks, and local HTML assets. HTTP 200 alone does not prove meaningful content or complete application functionality."
+}

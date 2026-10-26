@@ -10,7 +10,7 @@
 This document describes how the Australian Government Linked Data Working Group (AGLDWG) assess requests for and allocates persistent IRIs, PIDs, for Linked Data dataset, definitional resources and registers. It builds on both international public sector Linked Data IRI allocation guidance, such as the United Kingdom's "Designing URI Sets for the UK Public Sector" [[CAB-2010](#ref-CAB-2010)], and the AGLDWG's own 7+ year's experience with persistent IRI allocation.
 
 ## 2. Table of Contents
-1. [Preface](#1-Preface)
+1. [Preface](#1-preface)
 2. [Table of Contents](#2-table-of-contents)
 3. [Changelog](#3-changelog)
 4. [Conformance](#4-conformance)
@@ -27,15 +27,17 @@ This document describes how the Australian Government Linked Data Working Group 
     8.4. [Second-Level Registers](#84-second-level-registers)  
 9. [References](#9-references)
 10. [Appendix A: Resource Linked Data requirements](#appendix-a-resource-linked-data-requirements)
-11. [Appendix B: Resource register resource metadata](#appendix-b-resource-register-item-metadata)
+11. [Appendix B: Resource register item metadata](#appendix-b-resource-register-item-metadata)
 
 ## 3. Changelog
 This version of the document contains the following changes to the 2.1 version of the *Guidelines*: 
 
-1. use of IS0 19135 [[ISO-2014](#ref-ISO-2014)] for IRI registration procedure and roles, instead of ISO 11179 [[ISO-2015](#ref-ISO-2015)]
-2. replacement of references to a 'catalogue' with references to a 'register' or 'registry', as appropriate, to align terminology with [ISO-2014]
+1. use of ISO 19135 [[ISO-19135-2015](#ref-ISO-19135-2015)] for IRI registration procedure and roles, instead of ISO 11179 [[ISO-2015](#ref-ISO-2015)]
+2. replacement of references to a 'catalogue' with references to a 'register' or 'registry', as appropriate, to align terminology with [[ISO-19135-2015](#ref-ISO-19135-2015)]
 3. replacement of references 'PID IRIs' to just 'PIDs' for simplification of terminology
 4. definitions of roles moved to the 'Registry Roles Vocabulary'
+
+**Reference maintenance, 27 October 2026:** The ISO 19135 citation has been corrected to identify the published 2015 edition and its withdrawal. The 2026 successor is listed separately. These guidelines were developed using ISO 19135-1:2015; alignment with ISO 19135:2026 has not yet been assessed. This reference update does not change the registration roles, statuses or workflows described below.
 
 See [the guidelines repository](https://github.com/AGLDWG/guidelines) for previous versions of the *Guidelines*.
 
@@ -46,9 +48,9 @@ For further context around this document and it's use, please see the AGLDWG's *
 ## 4. Conformance
 The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHOULD*, *SHOULD NOT*, *RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as defined in [[IETF-1997](#ref-IETF-1997)].
 
-Roles associated with this register, *Register Owner*, *Submitter* *Submitting Organization*, *Control Body*, *Register Manager*, *Registry Manager* and *Register User*, are to be interpreted as defined in the AGLDWG's 'Registry Roles Vocabulary' [[AGLDWG-2021](#ref-AGLDWG-2021)] which is an interpretation of the roles defined in [[ISO-2014](#ref-ISO-2014)], with some small extensions.
+Roles associated with this register, *Register Owner*, *Submitter* *Submitting Organization*, *Control Body*, *Register Manager*, *Registry Manager* and *Register User*, are to be interpreted as defined in the AGLDWG's 'Registry Roles Vocabulary' [[AGLDWG-2021](#ref-AGLDWG-2021)] which is an interpretation of the roles defined in [[ISO-19135-2015](#ref-ISO-19135-2015)], with some small extensions.
 
-Statuses for resources in the register are *accepted*, *deprecated*, *retired*, *valid*, *experimental*, *stable*, *not accepted*, *invalid*, *reserved*, *superseded*, *submitted*, are taken from the 'Registry Status Vocabulary' [[AGLDWG-2018b](#ref-AGLDWG-2018b)], published by the AGLDWG, which is an extension of the 'Registry Ontology' [[REY-2012](#ref-REY-2012)]'s statuses. The Registry Ontology is, in turn, an interpretation of parts of [ISO-2014].
+Statuses for resources in the register are *accepted*, *deprecated*, *retired*, *valid*, *experimental*, *stable*, *not accepted*, *invalid*, *reserved*, *superseded*, *submitted*, are taken from the 'Registry Status Vocabulary' [[AGLDWG-2018b](#ref-AGLDWG-2018b)], published by the AGLDWG, which is an extension of the 'Registry Ontology' [[REY-2012](#ref-REY-2012)]'s statuses. The Registry Ontology is, in turn, an interpretation of parts of [[ISO-19135-2015](#ref-ISO-19135-2015)].
 
 IRI patterns are expressed using Augmented Backus-Naur Form, as defined in [[IETF-2008](#ref-IETF-2008)].
 
@@ -62,7 +64,7 @@ The Australian Government Linked Data Working Group (AGLDWG) advocates the use o
 ### 5.1 Internationalized Resource Identifiers (IRIs)
 Linked Data uses IRIs which are part of a single, global, identification system used on the World Wide Web, similar to telephone numbers in a public switched telephone network. We are all familiar with IRIs at work - often referred to by older names of *Uniform Resource Identifier* (URI) or *Uniform Resource Locator* (URL) - due to their use for addresses in browsers for web pages. IRIs are a key technology supporting Linked Data offering a generic, universal and infinitely expandable mechanism to identify *things*. In order to publish data in a Linked Data fashion, government needs to represent the identifiers they use for things using IRIs.
 
-Sir Tim Berners-Lee, who created many aspects of the World Wide Web we now take for granted, defined principles for the use of IRIs with Linked Data [[TBL-2009](#ref-TBL-2006)]. This document builds on those principles which, summarised, are:
+Sir Tim Berners-Lee, who created many aspects of the World Wide Web we now take for granted, defined principles for the use of IRIs with Linked Data [[TBL-2006](#ref-TBL-2006)]. This document builds on those principles which, summarised, are:
 
 #### 5.1.1. Use HTTP IRIs
 Addressing two of the four principles, *'use URIs'* and *'use HTTP URIs'*, governments and their agencies publishing Linked Data ***MUST*** provide HTTP IRIs as identifiers for resources, in order to support reuse and data integration/linking on the Web in a Linked Data fashion. HTTP IRIs enable IRIs to be "looked-up" or "dereferenced", which in turn provides access, via a Web browser, to  representations of the resource identified by these IRIs.
@@ -76,7 +78,7 @@ Requirement | Description | Conformance
 <a id="req-2"></a>[Req 2] | Provide at least one machine-readable representation in RDF at a resource's IRI. | ***MUST***
 
 #### 5.1.3 IRI persistence
-Much thought has gone into ensuring that IRIs for things can be made to keep working for a long time, starting with their technical design to avoid specific technology dependence (addressed by [[TBL-2009](#ref-TBL-2006)] and for Linked Data use in [[W3C-2008](#ref-W3C-2008)]) and extending to the governance arrangements for them to avoid, or at least make more resilient, their social systems dependence. Principles for successful persistent identifier (PID) generation are articulated in papers such as "The challenge of ensuring persistency of identifier systems" [[CAR-2017](#ref-CAR2-17)] which, among other things, advocates for the use of organisationally-independent identifiers.
+Much thought has gone into ensuring that IRIs for things can be made to keep working for a long time, starting with their technical design to avoid specific technology dependence (addressed by [[TBL-2006](#ref-TBL-2006)] and for Linked Data use in [[W3C-2008](#ref-W3C-2008)]) and extending to the governance arrangements for them to avoid, or at least make more resilient, their social systems dependence. Principles for successful persistent identifier (PID) generation are articulated in papers such as "The challenge of ensuring persistency of identifier systems" [[CAR-2017](#ref-CAR-2017)] which, among other things, advocates for the use of organisationally-independent identifiers.
 
 Beyond confirming adherence to these principles, the AGLDWG provides instruction on how to create IRIs for certain kinds of resources according to IRI construction best practice [[W3C-2012](#ref-W3C-2012)] and also provides a government organisation-independent namespace for them to use: `linked.data.gov.au`. This namespace, an internet domain, is managed by the AGLDWG.
 
@@ -114,11 +116,11 @@ The AGLDWG notes item registration is both commonplace for shared government res
 
 The AGLDWG requires all allocated PIDs to be registered provides guidance below on what types of PIDs may be registered, and the process for registration, including information required from registrants.
 
-Registration processes (Section 6.2, 7.2 & 8.2 below) follow those defined in "ISO 19135 Geographic information — Procedures for item registration ISO/DIS 19135-1", [[ISO-2014](#ref-ISO-2014)] with the assignment of resource status of *accepted* (see Section 4.3) being the necessary and sufficient criteria for the technical implementation of an IRI redirection for the PID.
+Registration processes ([Section 7.2](#72-register-workflows) and the resource-specific processes in [Section 8](#8-resource-types)) follow those defined in "ISO 19135-1:2015 Geographic information — Procedures for item registration — Part 1: Fundamentals", [[ISO-19135-2015](#ref-ISO-19135-2015)] with the assignment of resource status of *accepted* (see [Section 7.3](#73-register-item-statuses)) being the necessary and sufficient criteria for the technical implementation of an IRI redirection for the PID.
 
 ### 7.1 Register Roles
 
-All of the roles assigned to people and organisations within the context of PID Register use are taken from [[ISO-2014](#ref-ISO-2014)] and a vocabulary of the roles is presented by the AGLDWG online at:
+All of the roles assigned to people and organisations within the context of PID Register use are taken from [[ISO-19135-2015](#ref-ISO-19135-2015)] and a vocabulary of the roles is presented by the AGLDWG online at:
 
 * <https://linked.data.gov.au/def/reg-roles>
 
@@ -165,7 +167,7 @@ The Item Registration Workflow for registered item request processing is given i
 <a href="workflow-approval.png"><img src="workflow-approval.png" style="width: 50%" /></a><br />
 **Figure 1**: Workflow diagram showing the general workflow for the processing of PID IRI allocation requests which usually leads to item registration. Approval statuses are marked. The previous, ISO11179-based version of this workflow for Guidlines v1.1 and previous is retained in the file [workflow-approval-old.png](workflow-approval-old.png).
 
-Notes on specific workflows per resource type are given below in Sections 6 - 9.
+Notes on specific workflows per resource type are given below in [Section 8](#8-resource-types).
 
 Requirement | Description | Conformance
 ---|---|---
@@ -187,7 +189,7 @@ The Item Deprecation Workflow for registered item request processing is describe
     * the PID's status is changed to *retired*
 
 ### 7.3 Register Item Statuses
-An item's status within the Register is indicated with a *status*, terms for which are mostly taken from the Registry Ontology's status vocabulary. The original publication of this vocabulary is [[REY-2012](#ref-REY-2012)] and the AGLDWG has republished it at [[AGLDWG-2018b](#ref-AGLDWG-2018)]) to enable better visibility. The status vocabulary term hierarchy is:
+An item's status within the Register is indicated with a *status*, terms for which are mostly taken from the Registry Ontology's status vocabulary. The original publication of this vocabulary is [[REY-2012](#ref-REY-2012)] and the AGLDWG has republished it at [[AGLDWG-2018b](#ref-AGLDWG-2018b)]) to enable better visibility. The status vocabulary term hierarchy is:
 
 * [Accepted](https://linked.data.gov.au/def/reg-statuses/accepted)
   * [Deprecated](https://linked.data.gov.au/def/reg-statuses/deprecated)
@@ -224,7 +226,7 @@ There is an additional resource type, *Organisation*, for which PIDs are created
 
 More types of items may be added in the future. Such additions would require this document to be updated.
 
-PIDs for Datasets are created within the *Dataset Register*, for definitional resources within the *Def Register* and for Top-Level Register items within the *Top-Level Register*. This Top-Level Register contains the Dataset Register, the Def Register and the Organisations Register as subregisters. Second-Level Register items are created as registers within individual Datasets or as modules within Top-Level Registers, as detailed in [Section 9](#9-second-level-registers).
+PIDs for Datasets are created within the *Dataset Register*, for definitional resources within the *Def Register* and for Top-Level Register items within the *Top-Level Register*. This Top-Level Register contains the Dataset Register, the Def Register and the Organisations Register as subregisters. Second-Level Register items are created as registers within individual Datasets or as modules within Top-Level Registers, as detailed in [Section 8.4](#84-second-level-registers).
 
 The next four sections of this document describe how PIDs for the four type of items for which they may be requested are formulated and the processes to apply for them.
 
@@ -384,7 +386,7 @@ Entries in the AGLDWG Linked Data PID Register are public from submission onward
 Top-Level Registers are an index of individual Linked Data objects, promoted to the 'top' of `linked.data.gov.au` for high visibility. Such registers are formulated using very basic information:
 
 * the identity of the register itself (given via its PID)
-* metadata according to the Registry Ontology [[17](#ref-17)]
+* metadata according to the Registry Ontology [[REY-2012](#ref-REY-2012)]
 * a listing of the class(es) of items within the register and potentially Registry Ontology links to sub pages of the register. Lists of particular classes of LD objects that both allow for shorter IRIs to items within datasets and also allow items within them to not use IRIs deriving from them. As with datasets and definitional resources registered with the AGLDWG for IRI allocation, top-level registers require metadata to be lodged so that the content and ownership of the register is known and can be managed.
 
 Since top-level registers are designed to promote and aggregate assessed in order to determine the appropriateness of the requested IRI to the class(es) of objects to be listed in the register.
@@ -428,7 +430,7 @@ register-id = *(ALPHA / DIGIT / "-")
 
 Where `register-id` is some approximation of the class(es) of object which the register contains. What is a fair approximation and what is not will be judged by the *Controlling Committee*.
 
-An example is that a *Submitter* may request present a register of organisations, containing `Organization`-class individuals as defined in the Organization Ontology [[W3C-2014c]()#ref-W3C-2014c)] and request the allocation of:
+An example is that a *Submitter* may request present a register of organisations, containing `Organization`-class individuals as defined in the Organization Ontology [[W3C-2014c](#ref-W3C-2014c)] and request the allocation of:
 
 `https://linked.data.gov.au/organisation/`
 
@@ -486,9 +488,11 @@ In both cases, the IRI arrangements for the Second-Level Register PIDs need to b
 
 [AGLDWG-2018b] <a name="ref-AGLDWG-2018b"></a>Australian Government Linked Data Working Group, "Status Vocabulary". SKOS Vocabulary, 22 July 2018. <http://test.linked.data.gov.au/def/status>, accessed 2018-07-22.
 
-[CAB-2010] <a name="ref-CAB-2010"></a>Cabinet Office, "Designing IRI Sets for the UK Public Sector", web page, 2010. <https://www.gov.uk/government/publications/designing-IRI-sets-for-the-uk-public-sector>, accessed 2018-06-07.  
+[AGLDWG-2021] <a name="ref-AGLDWG-2021"></a>Australian Government Linked Data Working Group, "Registry Roles Vocabulary", SKOS vocabulary. <https://linked.data.gov.au/def/reg-roles>, accessed 2026-10-27.
 
-[CAR-2017] <a href="ref-CAR-2017"></a>Car, Nick; Golodoniuc, Pavel; Klump, Jens. "The challenge of ensuring persistency of identifier systems in the world of ever-changing technology". Data Science Journal. 2017; 16: Article 13. <https://doi.org/10.5334/dsj-2017-013>
+[CAB-2010] <a name="ref-CAB-2010"></a>Cabinet Office, "Designing URI Sets for the UK Public Sector", web page, 2010. <https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector>, accessed 2018-06-07.
+
+[CAR-2017] <a name="ref-CAR-2017"></a>Car, Nick; Golodoniuc, Pavel; Klump, Jens. "The challenge of ensuring persistency of identifier systems in the world of ever-changing technology". Data Science Journal. 2017; 16: Article 13. <https://doi.org/10.5334/dsj-2017-013>
 
 ##### Not used
 [DCMI-2012] <a name="ref-DCMI-2012"></a>Dublin Core Metadata Initiative "DCMI Metadata Terms", web page, 2012. <http://www.dublincore.org/documents/dcmi-terms/>, accessed 2018-06-07.
@@ -503,22 +507,24 @@ In both cases, the IRI arrangements for the Second-Level Register PIDs need to b
 
 [IETF-2008] <a name="ref-IETF-2008"></a>Internet Engineering Task Force, Network Working Group "Internet Standard 68: Augmented BNF for Syntax Specifications: ABNF". Internet Engineering Task Force, 2008. <https://tools.ietf.org/html/std68>, accessed 2018-06-07.  
 
-[ISO-2014] <a name="ref-ISO-2014"></a>International Organization for Standardization "ISO 19135 Geographic information — Procedures for item registration ISO/DIS 19135-1", standard. <https://www.iso.org/standard/54721.html>, accessed 2021-10-17.
+[ISO-19135-2015] <a name="ref-ISO-2014"></a><a name="ref-ISO-19135-2015"></a>International Organization for Standardization "ISO 19135-1:2015 Geographic information — Procedures for item registration — Part 1: Fundamentals", standard, 2015. <https://www.iso.org/standard/54721.html>, accessed 2026-10-27. Withdrawn in February 2026 and superseded by [[ISO-19135-2026](#ref-ISO-19135-2026)]; retained as the historical basis of these guidelines.
+
+[ISO-19135-2026] <a name="ref-ISO-19135-2026"></a>International Organization for Standardization "ISO 19135:2026 Geographic information — Registration and register governance", standard, 2026. <https://www.iso.org/standard/87753.html>, accessed 2026-10-27.
 
 [ISO-2015] <a name="ref-ISO-2015"></a>International Organization for Standardization / International Electrotechnical Commission "ISO/IEC 11179, Information Technology -- Metadata registries (MDR)", standard. <http://metadata-standards.org/11179/>, accessed 2018-06-07.
 
 ##### Not used
 [FIEL-2005] <a name="ref-FIEL-2005"></a>Fielding, Roy T. "[httpRange-14] Resolved", archived email, 2005. <http://lists.w3.org/Archives/Public/www-tag/2005Jun/0039.html>, accessed 2018-06-07.  
 
-[PC-2017] <a href="ref-PC-2017"></a>Productivity Commission, "Data Availability and Use", public inquiry report, 8 May 2017. <http://www.pc.gov.au/inquiries/completed/data-access>
+[PC-2017] <a name="ref-PC-2017"></a>Productivity Commission, "Data Availability and Use", public inquiry report, 8 May 2017. <http://www.pc.gov.au/inquiries/completed/data-access>
 
 [REY-2012] <a name="ref-REY-2012"></a>Reynolds, Dave "Registry ontology", Version 0.2. OWL Ontology,  2012-11-11 <http://epimorphics.com/public/vocabulary/Registry.html>, accessed 2018-07-22.
 
 [TBL-2006] <a name="ref-TBL-2006"></a>Berners-Lee, Tim "Linked Data", web page, 2006. <http://www.w3.org/DesignIssues/LinkedData.html>, accessed 2018-06-07.  
 
-[W3C-2008] <a name="ref-W3C-2008"></a>World Wide Web Consortium "Cool IRIs for the Semantic Web", W3C Interest Group Note, 03 December 2008. <http://www.w3.org/TR/coolIRIs/>, accessed 2018-06-07.  
+[W3C-2008] <a name="ref-W3C-2008"></a>World Wide Web Consortium "Cool URIs for the Semantic Web", W3C Interest Group Note, 03 December 2008. <https://www.w3.org/TR/cooluris/>, accessed 2018-06-07.
 
-[W3C-2012] <a name="ref-W3C-2012"></a>World Wide Web Consortium "223 Best Practices IRI Construction", wiki web page, 2012. <http://www.w3.org/2011/gld/wiki/223_Best_Practices_IRI_Construction>, accessed 2018-06-07.
+[W3C-2012] <a name="ref-W3C-2012"></a>World Wide Web Consortium "223 Best Practices URI Construction", wiki web page, 2012. <https://www.w3.org/2011/gld/wiki/223_Best_Practices_URI_Construction>, accessed 2018-06-07.
 
 [W3C-2014] <a name="ref-W3C-2014"></a>World Wide Web Consortium "RDF 1.1 Concepts and Abstract Syntax", W3C Proposed Recommendation, 09 January 2014. <http://www.w3.org/TR/rdf11-concepts/>, accessed 2018-06-07.  
 
@@ -526,7 +532,7 @@ In both cases, the IRI arrangements for the Second-Level Register PIDs need to b
 
 [W3C-2014c] <a name="ref-W3C-2014c"></a>World Wide Web Consortium "The Organization Ontology", W3C Recommendation 16 January 2014. <https://www.w3.org/TR/vocab-org/>, accessed 2018-07-30.
 
-[W3C-2016] <a href="ref-W3C-2016">World Wide Web Consortium, "HashVsSlash", web page, 2016. <https://www.w3.org/wiki/HashVsSlash>, accessed 2018-07-27.
+[W3C-2016] <a name="ref-W3C-2016"></a>World Wide Web Consortium, "HashVsSlash", web page, 2016. <https://www.w3.org/wiki/HashVsSlash>, accessed 2018-07-27.
 
 [W3C-2017] <a name="ref-W3C-2017"></a>World Wide Web Consortium "HTML 5.2", W3C Recommendation, 14 December 2017. <https://www.w3.org/TR/html/>, accessed 2018-07-28.
 
